@@ -3,87 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mahesh Kirana & Xerox – Since 2005</title>
+<title>Mahesh Kirana & Xerox</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
-    scroll-behavior:smooth;
 }
 
 body{
     background:#f4f6f9;
     color:#333;
-}
-
-section{
-    padding:70px 20px;
     text-align:center;
 }
-
-h2{
-    margin-bottom:40px;
-    color:#2e7d32;
-    font-size:28px;
-}
-
-/* NAVBAR */
 
 nav{
     background:#2e7d32;
     color:white;
-    padding:15px 30px;
+    padding:15px;
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:20px;
+nav h2{
+    font-size:18px;
 }
 
-nav ul li a{
-    text-decoration:none;
+button{
+    padding:6px 12px;
+    border:none;
+    border-radius:5px;
+    background:#ff9800;
     color:white;
-    font-size:14px;
+    cursor:pointer;
 }
-
-/* HERO */
 
 .hero{
     background:linear-gradient(135deg,#2e7d32,#ff9800);
     color:white;
-    padding:80px 20px;
+    padding:70px 20px;
 }
 
 .hero h1{
-    font-size:40px;
-}
-
-.hero p{
-    margin-top:10px;
-}
-
-.buttons{
-    margin-top:25px;
+    font-size:30px;
 }
 
 .btn{
     display:inline-block;
     margin:10px;
-    padding:12px 28px;
-    border-radius:30px;
+    padding:10px 20px;
+    border-radius:25px;
     text-decoration:none;
-    font-weight:600;
-    transition:0.3s;
+    font-weight:bold;
 }
 
 .call-btn{
@@ -96,188 +72,101 @@ nav ul li a{
     color:white;
 }
 
-.btn:hover{
-    transform:scale(1.05);
+section{
+    padding:60px 20px;
 }
-
-/* CARDS */
 
 .cards{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    gap:25px;
+    gap:20px;
 }
 
 .card{
     background:white;
-    padding:25px;
-    width:260px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.3s;
-    opacity:0;
-    transform:translateY(30px);
-}
-
-.card.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.card h3{
-    color:#ff9800;
-    margin-bottom:10px;
-}
-
-/* GALLERY */
-
-.gallery{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-    justify-content:center;
+    padding:20px;
+    width:250px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
 .gallery img{
-    width:100%;
-    max_width:400px;
-    height:auto;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    width:300px;
+    border-radius:10px;
+    margin:10px;
 }
-
-/* MAP */
 
 iframe{
-    width:100%;
+    width:90%;
     max-width:800px;
     height:300px;
+    border-radius:10px;
     border:none;
-    border-radius:15px;
 }
-
-/* FOOTER */
 
 footer{
     background:#2e7d32;
     color:white;
-    padding:20px;
+    padding:15px;
 }
 
-/* MOBILE */
-
 @media(max-width:768px){
-    nav ul{display:none;}
-    .hero h1{font-size:26px;}
     .cards{flex-direction:column;align-items:center;}
     .gallery img{width:90%;}
 }
-
 </style>
 </head>
 
 <body>
 
 <nav>
-    <h2>Mahesh Kirana & Xerox</h2>
-    <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+<h2>Mahesh Kirana & Xerox</h2>
+<button onclick="toggleLanguage()" id="langBtn">English</button>
 </nav>
 
 <div class="hero">
-    <h1>Mahesh Kirana & Xerox</h1>
-    <p>Since 2005 – Opposite Grama Sachivalayam</p>
-    <p>Andhra Pradesh</p>
+<h1 id="title"></h1>
+<p id="subtitle"></p>
 
-    <div class="buttons">
-        <a href="tel:9640695662" class="btn call-btn">📞 Call Now</a>
-        <a href="https://wa.me/919640695662" target="_blank" class="btn whatsapp-btn">💬 WhatsApp</a>
-    </div>
+<a href="tel:9640695662" class="btn call-btn">📞 Call</a>
+<a href="https://wa.me/919640695662" target="_blank" class="btn whatsapp-btn">💬 WhatsApp</a>
 </div>
 
-<section id="services">
-<h2>Our Services (సేవలు)</h2>
+<section>
+<h2 id="servicesTitle"></h2>
 <div class="cards">
-
-<div class="card">
-<h3>🖨 Xerox & Printing</h3>
-<p>Black & White Xerox, Online Forms, Aadhar & PAN Print.</p>
-</div>
-
-<div class="card">
-<h3>📄 Lamination</h3>
-<p>Certificates & important document lamination.</p>
-</div>
-
-<div class="card">
-<h3>📱 Mobile Recharges</h3>
-<p>Airtel, Jio, VI recharge services available.</p>
-</div>
-
-<div class="card">
-<h3>💡 Electricity Bill</h3>
-<p>Quick current bill payment service.</p>
-</div>
-
-<div class="card">
-<h3>🪔 Puja Items</h3>
-<p>Agarbatti, Camphor & pooja materials.</p>
-</div>
-
-<div class="card">
-<h3>🥤 Cold Drinks</h3>
-<p>Soft drinks & beverages available with Full Cooling.</p>
-</div>
-
+<div class="card">🖨 Xerox (B&W)</div>
+<div class="card">📄 Lamination</div>
+<div class="card">📱 Mobile Recharges</div>
+<div class="card">💡 Electricity Bill Payment</div>
+<div class="card">🪔 Puja Items</div>
+<div class="card">🥤 Cold Drinks</div>
 </div>
 </section>
 
 <section>
-<h2>Groceries & Vegetables (కిరాణా & కూరగాయలు)</h2>
+<h2 id="groceriesTitle"></h2>
 <div class="cards">
-
-<div class="card">
-<h3>🛒 Daily Groceries</h3>
-<p>Rice, Dal, Oil, Sugar, Atta & household items.</p>
-</div>
-
-<div class="card">
-<h3>🥕 Fresh Vegetables</h3>
-<p>Onion, Tomato, Potato, Mirchi, Garlic.</p>
-</div>
-
-<div class="card">
-<h3>📚 Stationery</h3>
-<p>Pens, Notebooks, Files & school materials.</p>
-</div>
-
+<div class="card">Rice, Dal, Oil, Sugar</div>
+<div class="card">Fresh Vegetables</div>
+<div class="card">Stationery Items</div>
 </div>
 </section>
 
-<section id="gallery">
-<h2>Shop Gallery (ఫోటోలు)</h2>
+<section>
+<h2>Gallery</h2>
 <div class="gallery">
-
-<!-- Replace these with your real shop photos -->
-<img src="shop_front_photo.jpg" alt="Shop Front">
-<img src="shop.jpg" alt="Inside Shop">
-    
+<img src="shop_front_photo.jpg">
+<img src="shop.jpg">
 </div>
 </section>
 
-<section id="contact">
-<h2>Contact & Location (స్థానం)</h2>
+<section>
+<h2 id="contactTitle"></h2>
 <p>📍 Opposite Grama Sachivalayam, Andhra Pradesh</p>
 <p>📞 9640695662</p>
-<p>🕒 Open Daily: 6:30 AM – 10:00 PM</p>
+<p>🕒 6:30 AM – 10:00 PM</p>
 
 <br>
 
@@ -285,25 +174,45 @@ footer{
 </section>
 
 <footer>
-© 2005 - 2026 Mahesh Kirana & Xerox | Established in 2005 as M Venkata Raju Store
+© 2005 - 2026 Mahesh Kirana & Xerox
 </footer>
 
 <script>
-// Animation on scroll
-const cards = document.querySelectorAll('.card');
 
-function revealCards(){
-    const triggerBottom = window.innerHeight * 0.9;
-    cards.forEach(card => {
-        const cardTop = card.getBoundingClientRect().top;
-        if(cardTop < triggerBottom){
-            card.classList.add('show');
-        }
-    });
+let isTelugu = true;
+
+window.onload = function(){
+    setTelugu();
 }
 
-window.addEventListener('scroll', revealCards);
-revealCards();
+function setTelugu(){
+    document.getElementById("title").innerText = "మహేష్ కిరాణా & జిరాక్స్";
+    document.getElementById("subtitle").innerText = "2005 నుండి సేవలో – గ్రామ సచివాలయం ఎదురుగా";
+    document.getElementById("servicesTitle").innerText = "మా సేవలు";
+    document.getElementById("groceriesTitle").innerText = "కిరాణా & కూరగాయలు";
+    document.getElementById("contactTitle").innerText = "సంప్రదించండి & స్థానం";
+    document.getElementById("langBtn").innerText = "English";
+}
+
+function setEnglish(){
+    document.getElementById("title").innerText = "Mahesh Kirana & Xerox";
+    document.getElementById("subtitle").innerText = "Since 2005 – Opposite Grama Sachivalayam";
+    document.getElementById("servicesTitle").innerText = "Our Services";
+    document.getElementById("groceriesTitle").innerText = "Groceries & Vegetables";
+    document.getElementById("contactTitle").innerText = "Contact & Location";
+    document.getElementById("langBtn").innerText = "తెలుగు";
+}
+
+function toggleLanguage(){
+    if(isTelugu){
+        setEnglish();
+        isTelugu = false;
+    } else {
+        setTelugu();
+        isTelugu = true;
+    }
+}
+
 </script>
 
 </body>
