@@ -5,81 +5,102 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mahesh Kirana & Xerox</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
+font-family:'Noto Sans Telugu', sans-serif;
 }
 
 body{
-background:#f4f6f9;
+background:#ffffff;
 color:#333;
+line-height:1.6;
 }
 
 /* NAVBAR */
 nav{
-position:sticky;
-top:0;
-background:#2e7d32;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 30px;
-color:white;
+padding:18px 8%;
+background:white;
+border-bottom:1px solid #eee;
+position:sticky;
+top:0;
 z-index:1000;
 }
 
+nav h2{
+color:#2e7d32;
+font-weight:700;
+font-size:20px;
+}
+
 nav button{
-padding:6px 14px;
-border:none;
-border-radius:20px;
-background:#ff9800;
+background:#2e7d32;
 color:white;
+border:none;
+padding:8px 16px;
+border-radius:6px;
 cursor:pointer;
-font-weight:bold;
 }
 
 /* HERO */
 .hero{
-background:linear-gradient(135deg,#2e7d32,#ff9800);
-color:white;
-padding:80px 20px;
+background:#f1f8f4;
+padding:100px 8%;
 text-align:center;
 }
 
 .hero h1{
-font-size:32px;
+font-size:34px;
+color:#2e7d32;
 margin-bottom:10px;
 }
 
-.hero a{
-margin:10px;
-padding:12px 25px;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-display:inline-block;
+.hero p{
+font-size:18px;
+color:#555;
+margin-bottom:30px;
 }
 
-.call-btn{background:white;color:#2e7d32;}
-.whatsapp-btn{background:#25D366;color:white;}
+.hero-buttons a{
+display:inline-block;
+padding:12px 24px;
+margin:8px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+}
 
+.call-btn{
+background:#2e7d32;
+color:white;
+}
+
+.whatsapp-btn{
+background:#25D366;
+color:white;
+}
+
+/* SECTION */
 section{
-padding:70px 30px;
-text-align:center;
+padding:70px 8%;
 }
 
 section h2{
+text-align:center;
+font-size:26px;
 margin-bottom:40px;
 color:#2e7d32;
-font-size:26px;
 }
 
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -88,43 +109,30 @@ gap:25px;
 
 .card{
 background:white;
-padding:20px;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+padding:25px;
+border-radius:10px;
+border:1px solid #eee;
+}
+
+/* GALLERY */
+.gallery{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
 }
 
 .gallery img{
-width:100%;
-max-width:400px;
-border-radius:12px;
-margin:10px;
+width:320px;
+border-radius:10px;
 }
 
-/* MAP RESPONSIVE FIX */
-.map-container{
-max-width:900px;
-margin:auto;
-}
-
-.map-container iframe{
+/* MAP */
+.map iframe{
 width:100%;
 height:350px;
-border-radius:15px;
-border:0;
-}
-
-/* FLOATING WHATSAPP */
-.float-whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px;
-border-radius:50%;
-font-size:22px;
-text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,0.2);
+border-radius:10px;
+border:none;
 }
 
 /* FOOTER */
@@ -137,8 +145,9 @@ padding:20px;
 
 @media(max-width:768px){
 .hero h1{font-size:24px;}
-section{padding:50px 15px;}
+.gallery img{width:100%;}
 }
+
 </style>
 </head>
 
@@ -152,14 +161,17 @@ section{padding:50px 15px;}
 <div class="hero">
 <h1 id="title"></h1>
 <p id="subtitle"></p>
-<a href="tel:9640695662" class="call-btn">📞 Call</a>
-<a href="https://wa.me/919640695662" target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
+
+<div class="hero-buttons">
+<a href="tel:9640695662" class="call-btn" id="callBtn"></a>
+<a href="https://wa.me/919640695662" target="_blank" class="whatsapp-btn" id="whatsappBtn"></a>
+</div>
 </div>
 
 <section>
 <h2 id="servicesTitle"></h2>
-<div class="grid">
 
+<div class="grid">
 <div class="card">
 <h3 id="s1Title"></h3>
 <p id="s1Desc"></p>
@@ -189,96 +201,116 @@ section{padding:50px 15px;}
 <h3 id="s6Title"></h3>
 <p id="s6Desc"></p>
 </div>
-
 </div>
 </section>
 
 <section>
-<h2 id="groceriesTitle"></h2>
-<div class="grid">
-<div class="card">Rice, Dal, Oil, Sugar</div>
-<div class="card">Fresh Vegetables</div>
-<div class="card">Stationery Items</div>
-</div>
-</section>
-
-<section>
-<h2>Shop Gallery</h2>
+<h2 id="photosTitle"></h2>
+<div class="gallery">
 <img src="shop_front_photo.jpg.jpeg">
 <img src="shop.jpg.jpeg">
+</div>
 </section>
 
-<section id="contact">
+<section class="map">
 <h2 id="contactTitle"></h2>
 
-<p>📍 Opposite Grama Sachivalayam, Vallampudi Village</p>
-<p>Vepada Mandal, Vizianagaram District, Andhra Pradesh</p>
-<p>📞 9640695662</p>
-<p>🕒 6:30 AM – 10:00 PM</p>
-
-<br>
-
-<div class="map-container">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.2946667280107!2d83.08162759999999!3d18.011523500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3bd9c9ccec4d1d%3A0x17992d1d0137f734!2sMahesh%20Kirana%20%26%20Xerox!5e0!3m2!1sen!2sin!4v1772531721855!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
-</div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.2946667280107!2d83.08162759999999!3d18.011523500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3bd9c9ccec4d1d%3A0x17992d1d0137f734!2sMahesh%20Kirana%20%26%20Xerox!5e0!3m2!1sen!2sin!4v1772531721855!5m2!1sen!2sin"></iframe>
 
 </section>
 
 <footer>
-© 2005 - 2026 Mahesh Kirana & Xerox
+<p id="footerText"></p>
 </footer>
-
-<a href="https://wa.me/919640695662" class="float-whatsapp" target="_blank">💬</a>
 
 <script>
 
 let isTelugu = true;
 
-window.onload = function(){
-setTelugu();
-}
+const content = {
+  telugu: {
+    title: "మహేష్ కిరాణా & జిరాక్స్",
+    subtitle: "2005 నుండి సేవలో – గ్రామ సచివాలయం ఎదురుగా",
+    servicesTitle: "మా సేవలు",
+    photosTitle: "దుకాణ ఫోటోలు",
+    contactTitle: "మా స్థానం",
+    callBtn: "📞 కాల్ చేయండి",
+    whatsappBtn: "💬 వాట్సాప్",
+    footer: "© 2005 - 2026 మహేష్ కిరాణా & జిరాక్స్",
 
-function setTelugu(){
-document.getElementById("title").innerText="మహేష్ కిరాణా & జిరాక్స్";
-document.getElementById("subtitle").innerText="2005 నుండి సేవలో – గ్రామ సచివాలయం ఎదురుగా";
-document.getElementById("servicesTitle").innerText="మా సేవలు";
-document.getElementById("groceriesTitle").innerText="కిరాణా & కూరగాయలు";
-document.getElementById("contactTitle").innerText="సంప్రదించండి & స్థానం";
+    s1: "జిరాక్స్ సేవలు",
+    s1d: "బ్లాక్ & వైట్ ప్రింటింగ్.",
+    s2: "లామినేషన్",
+    s2d: "పత్రాల రక్షణ.",
+    s3: "మొబైల్ రీచార్జ్",
+    s3d: "ఎయిర్టెల్, జియో, VI.",
+    s4: "కరెంట్ బిల్ చెల్లింపు",
+    s4d: "విద్యుత్ బిల్లు.",
+    s5: "పూజా సామగ్రి",
+    s5d: "అగర్బత్తి, కర్పూరం.",
+    s6: "కూల్ డ్రింక్స్",
+    s6d: "శీతల పానీయాలు."
+  },
 
-document.getElementById("s1Title").innerText="జిరాక్స్";
-document.getElementById("s1Desc").innerText="బ్లాక్ & వైట్ ప్రింటింగ్ సేవలు.";
+  english: {
+    title: "Mahesh Kirana & Xerox",
+    subtitle: "Since 2005 – Opposite Grama Sachivalayam",
+    servicesTitle: "Our Services",
+    photosTitle: "Shop Photos",
+    contactTitle: "Our Location",
+    callBtn: "📞 Call",
+    whatsappBtn: "💬 WhatsApp",
+    footer: "© 2005 - 2026 Mahesh Kirana & Xerox",
 
-document.getElementById("s2Title").innerText="లామినేషన్";
-document.getElementById("s2Desc").innerText="పత్రాల రక్షణ సేవలు.";
+    s1: "Xerox Services",
+    s1d: "Black & White Printing.",
+    s2: "Lamination",
+    s2d: "Document Protection.",
+    s3: "Mobile Recharge",
+    s3d: "Airtel, Jio, VI available.",
+    s4: "Electricity Bill Payment",
+    s4d: "Quick Bill Payment.",
+    s5: "Puja Items",
+    s5d: "Agarbatti, Camphor.",
+    s6: "Cold Drinks",
+    s6d: "Cool beverages available."
+  }
+};
 
-document.getElementById("s3Title").innerText="మొబైల్ రీచార్జ్";
-document.getElementById("s3Desc").innerText="ఎయిర్టెల్, జియో, VI అందుబాటులో.";
+function updateLanguage(lang) {
+  document.getElementById("title").innerText = content[lang].title;
+  document.getElementById("subtitle").innerText = content[lang].subtitle;
+  document.getElementById("servicesTitle").innerText = content[lang].servicesTitle;
+  document.getElementById("photosTitle").innerText = content[lang].photosTitle;
+  document.getElementById("contactTitle").innerText = content[lang].contactTitle;
+  document.getElementById("callBtn").innerText = content[lang].callBtn;
+  document.getElementById("whatsappBtn").innerText = content[lang].whatsappBtn;
+  document.getElementById("footerText").innerText = content[lang].footer;
 
-document.getElementById("s4Title").innerText="కరెంట్ బిల్";
-document.getElementById("s4Desc").innerText="విద్యుత్ బిల్లు చెల్లింపు.";
+  document.getElementById("s1Title").innerText = content[lang].s1;
+  document.getElementById("s1Desc").innerText = content[lang].s1d;
+  document.getElementById("s2Title").innerText = content[lang].s2;
+  document.getElementById("s2Desc").innerText = content[lang].s2d;
+  document.getElementById("s3Title").innerText = content[lang].s3;
+  document.getElementById("s3Desc").innerText = content[lang].s3d;
+  document.getElementById("s4Title").innerText = content[lang].s4;
+  document.getElementById("s4Desc").innerText = content[lang].s4d;
+  document.getElementById("s5Title").innerText = content[lang].s5;
+  document.getElementById("s5Desc").innerText = content[lang].s5d;
+  document.getElementById("s6Title").innerText = content[lang].s6;
+  document.getElementById("s6Desc").innerText = content[lang].s6d;
 
-document.getElementById("s5Title").innerText="పూజా సామగ్రి";
-document.getElementById("s5Desc").innerText="అగర్బత్తి, కర్పూరం, కొబ్బరి.";
-
-document.getElementById("s6Title").innerText="కూల్ డ్రింక్స్";
-document.getElementById("s6Desc").innerText="పానీయాలు(కూల్ డ్రింక్) అందుబాటులో.";
-
-document.getElementById("langBtn").innerText="English";
-}
-
-function setEnglish(){
-document.getElementById("title").innerText="Mahesh Kirana & Xerox";
-document.getElementById("subtitle").innerText="Since 2005 – Opposite Grama Sachivalayam";
-document.getElementById("servicesTitle").innerText="Our Services";
-document.getElementById("groceriesTitle").innerText="Groceries & Vegetables";
-document.getElementById("contactTitle").innerText="Contact & Location";
-document.getElementById("langBtn").innerText="తెలుగు";
+  document.getElementById("langBtn").innerText = lang === "telugu" ? "English" : "తెలుగు";
 }
 
 function toggleLanguage(){
-if(isTelugu){setEnglish();isTelugu=false;}
-else{setTelugu();isTelugu=true;}
+  isTelugu = !isTelugu;
+  updateLanguage(isTelugu ? "telugu" : "english");
 }
+
+window.onload = function(){
+  updateLanguage("telugu");
+};
 
 </script>
 
