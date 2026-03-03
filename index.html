@@ -3,214 +3,255 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M Venkata Raju Kirana & Xerox – Since 2005</title>
+<title>Mahesh Kirana & Xerox – Since 2005</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
-body{
-    background:#f9f9f9;
-    color:#333;
+body {
+    background: #f4f6f9;
+    color: #333;
 }
 
-header{
-    background:linear-gradient(135deg,#2e7d32,#ff9800);
-    color:white;
-    padding:60px 20px;
-    text-align:center;
+/* NAVBAR */
+
+nav {
+    background: #2e7d32;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
 }
 
-header h1{
-    font-size:32px;
-    font-weight:700;
+nav h2 {
+    font-size: 20px;
 }
 
-header p{
-    margin-top:10px;
-    font-size:18px;
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
-.btn{
-    display:inline-block;
-    margin:15px 10px;
-    padding:12px 25px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.3s;
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
 }
 
-.call-btn{
-    background:#ffffff;
-    color:#2e7d32;
+/* HERO */
+
+.hero {
+    background: linear-gradient(135deg,#2e7d32,#ff9800);
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
 }
 
-.whatsapp-btn{
-    background:#25D366;
-    color:white;
+.hero h1 {
+    font-size: 36px;
 }
 
-.btn:hover{
-    transform:scale(1.05);
+.hero p {
+    margin-top: 10px;
+    font-size: 18px;
 }
 
-section{
-    padding:60px 20px;
-    text-align:center;
+.buttons {
+    margin-top: 20px;
 }
 
-h2{
-    font-size:26px;
-    margin-bottom:30px;
-    color:#2e7d32;
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-.cards{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:25px;
+.call-btn {
+    background: white;
+    color: #2e7d32;
 }
 
-.card{
-    background:white;
-    padding:25px;
-    width:280px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.3s;
+.whatsapp-btn {
+    background: #25D366;
+    color: white;
 }
 
-.card:hover{
-    transform:translateY(-5px);
+.btn:hover {
+    transform: scale(1.05);
 }
 
-.card h3{
-    color:#ff9800;
-    margin-bottom:10px;
+/* SECTIONS */
+
+section {
+    padding: 60px 20px;
+    text-align: center;
 }
 
-.map-container{
-    margin-top:30px;
-    width:100%;
-    max-width:800px;
-    margin-left:auto;
-    margin-right:auto;
+h2 {
+    margin-bottom: 30px;
+    color: #2e7d32;
 }
 
-iframe{
-    width:100%;
-    height:300px;
-    border:0;
-    border-radius:15px;
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
 }
 
-footer{
-    background:#2e7d32;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
+.card {
+    background: white;
+    padding: 25px;
+    width: 260px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #ff9800;
+    margin-bottom: 10px;
+}
+
+/* MAP */
+
+iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 300px;
+    border-radius: 15px;
+    border: none;
+}
+
+/* FOOTER */
+
+footer {
+    background: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* MOBILE */
 
 @media(max-width:768px){
-    header h1{
-        font-size:24px;
+    nav ul {
+        display: none;
     }
-    .cards{
-        flex-direction:column;
-        align-items:center;
+    .hero h1 {
+        font-size: 26px;
+    }
+    .cards {
+        flex-direction: column;
+        align-items: center;
     }
 }
+
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>M Venkata Raju Kirana & Xerox</h1>
-    <p>Since 2005 – Trusted Village Store</p>
-    <p>Opposite Grama Sachivalayam | Andhra Pradesh</p>
+<nav>
+    <h2>Mahesh Kirana & Xerox</h2>
+    <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#groceries">Groceries</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
-    <a href="tel:9640695662" class="btn call-btn">📞 Call Now</a>
-    <a href="https://wa.me/919640695662" target="_blank" class="btn whatsapp-btn">💬 WhatsApp</a>
-</header>
+<div class="hero">
+    <h1>Mahesh Kirana & Xerox</h1>
+    <p>Since 2005 – Opposite Grama Sachivalayam</p>
+    <p>Andhra Pradesh</p>
 
-<section>
-    <h2>Xerox Services (జిరాక్స్ సేవలు)</h2>
+    <div class="buttons">
+        <a href="tel:9640695662" class="btn call-btn">📞 Call Now</a>
+        <a href="https://wa.me/919640695662" target="_blank" class="btn whatsapp-btn">💬 WhatsApp</a>
+    </div>
+</div>
+
+<section id="services">
+    <h2>Our Services (సేవలు)</h2>
     <div class="cards">
         <div class="card">
-            <h3>Black & White Print</h3>
-            <p>Fast and clear B&W printouts for students and villagers.</p>
+            <h3>Xerox & Printing</h3>
+            <p>Black & White Xerox, Online Forms, Aadhar & PAN Print.</p>
         </div>
         <div class="card">
-            <h3>Online Applications</h3>
-            <p>Aadhar, PAN, Government Schemes & Online Forms.</p>
+            <h3>Lamination</h3>
+            <p>Certificate & document lamination available.</p>
         </div>
         <div class="card">
-            <h3>Document Support</h3>
-            <p>Bring pen drive or visit directly for quick service.</p>
+            <h3>Mobile Recharges</h3>
+            <p>Airtel, Jio, VI Recharge services.</p>
+        </div>
+        <div class="card">
+            <h3>Electricity Bill Payment</h3>
+            <p>Quick and easy current bill payment.</p>
+        </div>
+        <div class="card">
+            <h3>Puja Items</h3>
+            <p>Agarbatti, Camphor, Coconut & all pooja materials.</p>
+        </div>
+        <div class="card">
+            <h3>Cold Drinks</h3>
+            <p>Soft drinks and beverages available.</p>
         </div>
     </div>
 </section>
 
-<section>
+<section id="groceries">
     <h2>Groceries & Vegetables (కిరాణా & కూరగాయలు)</h2>
     <div class="cards">
         <div class="card">
             <h3>Daily Groceries</h3>
-            <p>Rice, Dal, Oil, Sugar, Atta, Soaps, Shampoo & more.</p>
+            <p>Rice, Dal, Oil, Sugar, Atta, Soaps & more.</p>
         </div>
         <div class="card">
             <h3>Fresh Vegetables</h3>
-            <p>Onion, Tomato, Potato, Mirchi, Garlic available daily.</p>
+            <p>Onion, Tomato, Potato, Mirchi, Garlic.</p>
         </div>
         <div class="card">
-            <h3>Stationery Items</h3>
-            <p>Pens, Notebooks, Files and school materials.</p>
+            <h3>Stationery</h3>
+            <p>Pens, Notebooks, Files & school materials.</p>
         </div>
     </div>
 </section>
 
-<section>
-    <h2>Why Choose Us?</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>15+ Years Trust</h3>
-            <p>Serving the village since 2005 with dedication.</p>
-        </div>
-        <div class="card">
-            <h3>Prime Location</h3>
-            <p>Opposite Grama Sachivalayam for easy access.</p>
-        </div>
-        <div class="card">
-            <h3>Affordable Prices</h3>
-            <p>Reasonable prices with friendly service.</p>
-        </div>
-    </div>
-</section>
+<section id="contact">
+    <h2>Contact & Location (స్థానం)</h2>
+    <p>📍 Opposite Grama Sachivalayam, Andhra Pradesh</p>
+    <p>📞 9640695662</p>
+    <p>🕒 Open Daily: 8:00 AM – 9:00 PM</p>
 
-<section>
-    <h2>Location (స్థానం)</h2>
-    <p>Visit us opposite Grama Sachivalayam, Andhra Pradesh.</p>
+    <br>
 
-    <div class="map-container">
-        <!-- Replace src with your real Google Maps embed link -->
-        <iframe 
-            src="https://www.google.com/maps?q=Andhra%20Pradesh&output=embed">
-        </iframe>
-    </div>
+    <iframe src="https://www.google.com/maps?q=Andhra%20Pradesh&output=embed"></iframe>
 </section>
 
 <footer>
-    © 2005 - 2026 M Venkata Raju Kirana & Xerox | All Rights Reserved
+    © 2005 - 2026 Mahesh Kirana & Xerox | Established in 2005 as M Venkata Raju Store
 </footer>
 
 </body>
