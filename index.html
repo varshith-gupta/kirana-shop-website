@@ -9,111 +9,135 @@
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    background:#f4f6f9;
-    color:#333;
-    text-align:center;
+background:#f4f6f9;
+color:#333;
 }
 
+/* NAVBAR */
 nav{
-    background:#2e7d32;
-    color:white;
-    padding:15px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+position:sticky;
+top:0;
+background:#2e7d32;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+color:white;
+z-index:1000;
 }
 
-nav h2{
-    font-size:18px;
+nav button{
+padding:6px 14px;
+border:none;
+border-radius:20px;
+background:#ff9800;
+color:white;
+cursor:pointer;
+font-weight:bold;
 }
 
-button{
-    padding:6px 12px;
-    border:none;
-    border-radius:5px;
-    background:#ff9800;
-    color:white;
-    cursor:pointer;
-}
-
+/* HERO */
 .hero{
-    background:linear-gradient(135deg,#2e7d32,#ff9800);
-    color:white;
-    padding:70px 20px;
+background:linear-gradient(135deg,#2e7d32,#ff9800);
+color:white;
+padding:80px 20px;
+text-align:center;
 }
 
 .hero h1{
-    font-size:30px;
+font-size:32px;
+margin-bottom:10px;
 }
 
-.btn{
-    display:inline-block;
-    margin:10px;
-    padding:10px 20px;
-    border-radius:25px;
-    text-decoration:none;
-    font-weight:bold;
+.hero a{
+margin:10px;
+padding:12px 25px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+display:inline-block;
 }
 
-.call-btn{
-    background:white;
-    color:#2e7d32;
-}
-
-.whatsapp-btn{
-    background:#25D366;
-    color:white;
-}
+.call-btn{background:white;color:#2e7d32;}
+.whatsapp-btn{background:#25D366;color:white;}
 
 section{
-    padding:60px 20px;
+padding:70px 30px;
+text-align:center;
 }
 
-.cards{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
+section h2{
+margin-bottom:40px;
+color:#2e7d32;
+font-size:26px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
 .card{
-    background:white;
-    padding:20px;
-    width:250px;
-    border-radius:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 .gallery img{
-    width:300px;
-    border-radius:10px;
-    margin:10px;
+width:100%;
+max-width:400px;
+border-radius:12px;
+margin:10px;
 }
 
-iframe{
-    width:90%;
-    max-width:800px;
-    height:300px;
-    border-radius:10px;
-    border:none;
+/* MAP RESPONSIVE FIX */
+.map-container{
+max-width:900px;
+margin:auto;
 }
 
+.map-container iframe{
+width:100%;
+height:350px;
+border-radius:15px;
+border:0;
+}
+
+/* FLOATING WHATSAPP */
+.float-whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
 footer{
-    background:#2e7d32;
-    color:white;
-    padding:15px;
+background:#2e7d32;
+color:white;
+text-align:center;
+padding:20px;
 }
 
 @media(max-width:768px){
-    .cards{flex-direction:column;align-items:center;}
-    .gallery img{width:90%;}
+.hero h1{font-size:24px;}
+section{padding:50px 15px;}
 }
 </style>
 </head>
@@ -128,26 +152,50 @@ footer{
 <div class="hero">
 <h1 id="title"></h1>
 <p id="subtitle"></p>
-
-<a href="tel:9640695662" class="btn call-btn">📞 Call</a>
-<a href="https://wa.me/919640695662" target="_blank" class="btn whatsapp-btn">💬 WhatsApp</a>
+<a href="tel:9640695662" class="call-btn">📞 Call</a>
+<a href="https://wa.me/919640695662" target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
 </div>
 
 <section>
 <h2 id="servicesTitle"></h2>
-<div class="cards">
-<div class="card">🖨 Xerox (B&W)</div>
-<div class="card">📄 Lamination</div>
-<div class="card">📱 Mobile Recharges</div>
-<div class="card">💡 Electricity Bill Payment</div>
-<div class="card">🪔 Puja Items</div>
-<div class="card">🥤 Cold Drinks</div>
+<div class="grid">
+
+<div class="card">
+<h3 id="s1Title"></h3>
+<p id="s1Desc"></p>
+</div>
+
+<div class="card">
+<h3 id="s2Title"></h3>
+<p id="s2Desc"></p>
+</div>
+
+<div class="card">
+<h3 id="s3Title"></h3>
+<p id="s3Desc"></p>
+</div>
+
+<div class="card">
+<h3 id="s4Title"></h3>
+<p id="s4Desc"></p>
+</div>
+
+<div class="card">
+<h3 id="s5Title"></h3>
+<p id="s5Desc"></p>
+</div>
+
+<div class="card">
+<h3 id="s6Title"></h3>
+<p id="s6Desc"></p>
+</div>
+
 </div>
 </section>
 
 <section>
 <h2 id="groceriesTitle"></h2>
-<div class="cards">
+<div class="grid">
 <div class="card">Rice, Dal, Oil, Sugar</div>
 <div class="card">Fresh Vegetables</div>
 <div class="card">Stationery Items</div>
@@ -155,62 +203,81 @@ footer{
 </section>
 
 <section>
-<h2>Gallery</h2>
-<div class="gallery">
-<img src="shop_front_photo.jpg">
-<img src="shop.jpg">
-</div>
+<h2>Shop Gallery</h2>
+<img src="shop_front_photo.jpg.jpeg">
+<img src="shop.jpg.jpeg">
 </section>
 
-<section>
+<section id="contact">
 <h2 id="contactTitle"></h2>
-<p>📍 Opposite Grama Sachivalayam, Andhra Pradesh</p>
+
+<p>📍 Opposite Grama Sachivalayam, Vallampudi Village</p>
+<p>Vepada Mandal, Vizianagaram District, Andhra Pradesh</p>
 <p>📞 9640695662</p>
 <p>🕒 6:30 AM – 10:00 PM</p>
 
 <br>
 
-<iframe src="https://www.google.com/maps?q=Andhra%20Pradesh&output=embed"></iframe>
+<div class="map-container">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.2946667280107!2d83.08162759999999!3d18.011523500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3bd9c9ccec4d1d%3A0x17992d1d0137f734!2sMahesh%20Kirana%20%26%20Xerox!5e0!3m2!1sen!2sin!4v1772531721855!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
 </section>
 
 <footer>
 © 2005 - 2026 Mahesh Kirana & Xerox
 </footer>
 
+<a href="https://wa.me/919640695662" class="float-whatsapp" target="_blank">💬</a>
+
 <script>
 
 let isTelugu = true;
 
 window.onload = function(){
-    setTelugu();
+setTelugu();
 }
 
 function setTelugu(){
-    document.getElementById("title").innerText = "మహేష్ కిరాణా & జిరాక్స్";
-    document.getElementById("subtitle").innerText = "2005 నుండి సేవలో – గ్రామ సచివాలయం ఎదురుగా";
-    document.getElementById("servicesTitle").innerText = "మా సేవలు";
-    document.getElementById("groceriesTitle").innerText = "కిరాణా & కూరగాయలు";
-    document.getElementById("contactTitle").innerText = "సంప్రదించండి & స్థానం";
-    document.getElementById("langBtn").innerText = "English";
+document.getElementById("title").innerText="మహేష్ కిరాణా & జిరాక్స్";
+document.getElementById("subtitle").innerText="2005 నుండి సేవలో – గ్రామ సచివాలయం ఎదురుగా";
+document.getElementById("servicesTitle").innerText="మా సేవలు";
+document.getElementById("groceriesTitle").innerText="కిరాణా & కూరగాయలు";
+document.getElementById("contactTitle").innerText="సంప్రదించండి & స్థానం";
+
+document.getElementById("s1Title").innerText="జిరాక్స్";
+document.getElementById("s1Desc").innerText="బ్లాక్ & వైట్ ప్రింటింగ్ సేవలు.";
+
+document.getElementById("s2Title").innerText="లామినేషన్";
+document.getElementById("s2Desc").innerText="పత్రాల రక్షణ సేవలు.";
+
+document.getElementById("s3Title").innerText="మొబైల్ రీచార్జ్";
+document.getElementById("s3Desc").innerText="ఎయిర్టెల్, జియో, VI అందుబాటులో.";
+
+document.getElementById("s4Title").innerText="కరెంట్ బిల్";
+document.getElementById("s4Desc").innerText="విద్యుత్ బిల్లు చెల్లింపు.";
+
+document.getElementById("s5Title").innerText="పూజా సామగ్రి";
+document.getElementById("s5Desc").innerText="అగర్బత్తి, కర్పూరం, కొబ్బరి.";
+
+document.getElementById("s6Title").innerText="కూల్ డ్రింక్స్";
+document.getElementById("s6Desc").innerText="పానీయాలు(కూల్ డ్రింక్) అందుబాటులో.";
+
+document.getElementById("langBtn").innerText="English";
 }
 
 function setEnglish(){
-    document.getElementById("title").innerText = "Mahesh Kirana & Xerox";
-    document.getElementById("subtitle").innerText = "Since 2005 – Opposite Grama Sachivalayam";
-    document.getElementById("servicesTitle").innerText = "Our Services";
-    document.getElementById("groceriesTitle").innerText = "Groceries & Vegetables";
-    document.getElementById("contactTitle").innerText = "Contact & Location";
-    document.getElementById("langBtn").innerText = "తెలుగు";
+document.getElementById("title").innerText="Mahesh Kirana & Xerox";
+document.getElementById("subtitle").innerText="Since 2005 – Opposite Grama Sachivalayam";
+document.getElementById("servicesTitle").innerText="Our Services";
+document.getElementById("groceriesTitle").innerText="Groceries & Vegetables";
+document.getElementById("contactTitle").innerText="Contact & Location";
+document.getElementById("langBtn").innerText="తెలుగు";
 }
 
 function toggleLanguage(){
-    if(isTelugu){
-        setEnglish();
-        isTelugu = false;
-    } else {
-        setTelugu();
-        isTelugu = true;
-    }
+if(isTelugu){setEnglish();isTelugu=false;}
+else{setTelugu();isTelugu=true;}
 }
 
 </script>
