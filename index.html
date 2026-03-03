@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -147,7 +146,6 @@ padding:20px;
 .hero h1{font-size:24px;}
 .gallery img{width:100%;}
 }
-
 </style>
 </head>
 
@@ -168,42 +166,25 @@ padding:20px;
 </div>
 </div>
 
+<!-- SERVICES -->
 <section>
 <h2 id="servicesTitle"></h2>
 
 <div class="grid">
-<div class="card">
-<h3 id="s1Title"></h3>
-<p id="s1Desc"></p>
-</div>
 
-<div class="card">
-<h3 id="s2Title"></h3>
-<p id="s2Desc"></p>
-</div>
+<div class="card"><h3 id="s1Title"></h3><p id="s1Desc"></p></div>
+<div class="card"><h3 id="s2Title"></h3><p id="s2Desc"></p></div>
+<div class="card"><h3 id="s3Title"></h3><p id="s3Desc"></p></div>
+<div class="card"><h3 id="s4Title"></h3><p id="s4Desc"></p></div>
+<div class="card"><h3 id="s5Title"></h3><p id="s5Desc"></p></div>
+<div class="card"><h3 id="s6Title"></h3><p id="s6Desc"></p></div>
+<div class="card"><h3 id="s7Title"></h3><p id="s7Desc"></p></div>
+<div class="card"><h3 id="s8Title"></h3><p id="s8Desc"></p></div>
 
-<div class="card">
-<h3 id="s3Title"></h3>
-<p id="s3Desc"></p>
-</div>
-
-<div class="card">
-<h3 id="s4Title"></h3>
-<p id="s4Desc"></p>
-</div>
-
-<div class="card">
-<h3 id="s5Title"></h3>
-<p id="s5Desc"></p>
-</div>
-
-<div class="card">
-<h3 id="s6Title"></h3>
-<p id="s6Desc"></p>
-</div>
 </div>
 </section>
 
+<!-- GALLERY -->
 <section>
 <h2 id="photosTitle"></h2>
 <div class="gallery">
@@ -212,6 +193,7 @@ padding:20px;
 </div>
 </section>
 
+<!-- LOCATION -->
 <section class="map">
 <h2 id="contactTitle"></h2>
 
@@ -228,88 +210,63 @@ padding:20px;
 let isTelugu = true;
 
 const content = {
-  telugu: {
-    title: "మహేష్ కిరాణా & జిరాక్స్",
-    subtitle: "2005 నుండి సేవలో – గ్రామ సచివాలయం ఎదురుగా",
-    servicesTitle: "మా సేవలు",
-    photosTitle: "దుకాణ ఫోటోలు",
-    contactTitle: "మా స్థానం",
-    callBtn: "📞 కాల్ చేయండి",
-    whatsappBtn: "💬 వాట్సాప్",
-    footer: "© 2005 - 2026 మహేష్ కిరాణా & జిరాక్స్",
+telugu:{
+title:"మహేష్ కిరాణా & జిరాక్స్",
+subtitle:"2005 నుండి సేవలో – గ్రామ సచివాలయం ఎదురుగా",
+servicesTitle:"మా సేవలు",
+photosTitle:"దుకాణ ఫోటోలు",
+contactTitle:"మా స్థానం",
+callBtn:"📞 కాల్ చేయండి",
+whatsappBtn:"💬 వాట్సాప్",
+footer:"© 2005 - 2026 మహేష్ కిరాణా & జిరాక్స్",
 
-    s1: "జిరాక్స్ సేవలు",
-    s1d: "బ్లాక్ & వైట్ ప్రింటింగ్.",
-    s2: "లామినేషన్",
-    s2d: "పత్రాల రక్షణ.",
-    s3: "మొబైల్ రీచార్జ్",
-    s3d: "ఎయిర్టెల్, జియో, VI.",
-    s4: "కరెంట్ బిల్ చెల్లింపు",
-    s4d: "విద్యుత్ బిల్లు.",
-    s5: "పూజా సామగ్రి",
-    s5d: "అగర్బత్తి, కర్పూరం.",
-    s6: "కూల్ డ్రింక్స్",
-    s6d: "శీతల పానీయాలు."
-  },
+s1:"జిరాక్స్ సేవలు", s1d:"బ్లాక్ & వైట్ ప్రింటింగ్.",
+s2:"లామినేషన్", s2d:"పత్రాల రక్షణ.",
+s3:"మొబైల్ రీచార్జ్", s3d:"ఎయిర్టెల్, జియో, VI.",
+s4:"కరెంట్ బిల్ చెల్లింపు", s4d:"విద్యుత్ బిల్లు.",
+s5:"పూజా సామగ్రి", s5d:"అగర్బత్తి, కర్పూరం.",
+s6:"కూల్ డ్రింక్స్", s6d:"శీతల పానీయాలు.",
+s7:"కిరాణా సరుకులు", s7d:"బియ్యం, పప్పు, నూనె, చక్కెర.",
+s8:"స్టేషనరీ & కూరగాయలు", s8d:"పెన్స్, పుస్తకాలు, తాజా కూరగాయలు."
+},
 
-  english: {
-    title: "Mahesh Kirana & Xerox",
-    subtitle: "Since 2005 – Opposite Grama Sachivalayam",
-    servicesTitle: "Our Services",
-    photosTitle: "Shop Photos",
-    contactTitle: "Our Location",
-    callBtn: "📞 Call",
-    whatsappBtn: "💬 WhatsApp",
-    footer: "© 2005 - 2026 Mahesh Kirana & Xerox",
+english:{
+title:"Mahesh Kirana & Xerox",
+subtitle:"Since 2005 – Opposite Grama Sachivalayam",
+servicesTitle:"Our Services",
+photosTitle:"Shop Photos",
+contactTitle:"Our Location",
+callBtn:"📞 Call",
+whatsappBtn:"💬 WhatsApp",
+footer:"© 2005 - 2026 Mahesh Kirana & Xerox",
 
-    s1: "Xerox Services",
-    s1d: "Black & White Printing.",
-    s2: "Lamination",
-    s2d: "Document Protection.",
-    s3: "Mobile Recharge",
-    s3d: "Airtel, Jio, VI available.",
-    s4: "Electricity Bill Payment",
-    s4d: "Quick Bill Payment.",
-    s5: "Puja Items",
-    s5d: "Agarbatti, Camphor.",
-    s6: "Cold Drinks",
-    s6d: "Cool beverages available."
-  }
+s1:"Xerox Services", s1d:"Black & White Printing.",
+s2:"Lamination", s2d:"Document Protection.",
+s3:"Mobile Recharge", s3d:"Airtel, Jio, VI available.",
+s4:"Electricity Bill Payment", s4d:"Quick Bill Payment.",
+s5:"Puja Items", s5d:"Agarbatti, Camphor.",
+s6:"Cold Drinks", s6d:"Cool beverages available.",
+s7:"Groceries", s7d:"Rice, Dal, Oil, Sugar.",
+s8:"Stationery & Vegetables", s8d:"Pens, Notebooks, Fresh Vegetables."
+}
 };
 
-function updateLanguage(lang) {
-  document.getElementById("title").innerText = content[lang].title;
-  document.getElementById("subtitle").innerText = content[lang].subtitle;
-  document.getElementById("servicesTitle").innerText = content[lang].servicesTitle;
-  document.getElementById("photosTitle").innerText = content[lang].photosTitle;
-  document.getElementById("contactTitle").innerText = content[lang].contactTitle;
-  document.getElementById("callBtn").innerText = content[lang].callBtn;
-  document.getElementById("whatsappBtn").innerText = content[lang].whatsappBtn;
-  document.getElementById("footerText").innerText = content[lang].footer;
-
-  document.getElementById("s1Title").innerText = content[lang].s1;
-  document.getElementById("s1Desc").innerText = content[lang].s1d;
-  document.getElementById("s2Title").innerText = content[lang].s2;
-  document.getElementById("s2Desc").innerText = content[lang].s2d;
-  document.getElementById("s3Title").innerText = content[lang].s3;
-  document.getElementById("s3Desc").innerText = content[lang].s3d;
-  document.getElementById("s4Title").innerText = content[lang].s4;
-  document.getElementById("s4Desc").innerText = content[lang].s4d;
-  document.getElementById("s5Title").innerText = content[lang].s5;
-  document.getElementById("s5Desc").innerText = content[lang].s5d;
-  document.getElementById("s6Title").innerText = content[lang].s6;
-  document.getElementById("s6Desc").innerText = content[lang].s6d;
-
-  document.getElementById("langBtn").innerText = lang === "telugu" ? "English" : "తెలుగు";
+function updateLanguage(lang){
+for(let key in content[lang]){
+if(document.getElementById(key)){
+document.getElementById(key).innerText = content[lang][key];
+}
+}
+document.getElementById("langBtn").innerText = lang==="telugu" ? "English" : "తెలుగు";
 }
 
 function toggleLanguage(){
-  isTelugu = !isTelugu;
-  updateLanguage(isTelugu ? "telugu" : "english");
+isTelugu = !isTelugu;
+updateLanguage(isTelugu?"telugu":"english");
 }
 
-window.onload = function(){
-  updateLanguage("telugu");
+window.onload=function(){
+updateLanguage("telugu");
 };
 
 </script>
