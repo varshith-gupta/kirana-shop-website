@@ -22,7 +22,6 @@ color:#333;
 line-height:1.6;
 }
 
-/* NAVBAR */
 nav{
 display:flex;
 justify-content:space-between;
@@ -37,13 +36,6 @@ z-index:1000;
 
 nav h2{color:#2e7d32;}
 
-nav .links a{
-margin:0 10px;
-text-decoration:none;
-color:#333;
-font-size:14px;
-}
-
 nav button{
 background:#2e7d32;
 color:white;
@@ -53,9 +45,8 @@ border-radius:6px;
 cursor:pointer;
 }
 
-/* HERO */
 .hero{
-background:linear-gradient(to right,#f1f8f4,#e8f5e9);
+background:#f1f8f4;
 padding:90px 8%;
 text-align:center;
 }
@@ -66,9 +57,7 @@ color:#2e7d32;
 margin-bottom:10px;
 }
 
-.hero p{
-margin-bottom:20px;
-}
+.hero p{margin-bottom:20px;}
 
 .hero a{
 display:inline-block;
@@ -83,15 +72,6 @@ font-weight:600;
 .call-btn{background:#2e7d32;}
 .whatsapp-btn{background:#25D366;}
 
-/* OFFER BANNER */
-.offer{
-background:#ffeb3b;
-padding:12px;
-text-align:center;
-font-weight:600;
-}
-
-/* SECTION */
 section{
 padding:60px 8%;
 }
@@ -99,30 +79,19 @@ padding:60px 8%;
 section h2{
 text-align:center;
 color:#2e7d32;
-margin-bottom:35px;
-font-size:26px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
+margin-bottom:30px;
+font-size:24px;
 }
 
 .card{
 background:#fafafa;
 border:1px solid #eee;
-padding:20px;
-border-radius:10px;
-transition:0.3s;
+padding:18px;
+border-radius:8px;
+max-width:600px;
+margin:10px auto;
 }
 
-.card:hover{
-transform:translateY(-5px);
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* GALLERY */
 .gallery{
 display:flex;
 flex-wrap:wrap;
@@ -135,7 +104,6 @@ width:300px;
 border-radius:8px;
 }
 
-/* MAP */
 .map iframe{
 width:100%;
 height:350px;
@@ -143,7 +111,6 @@ border:none;
 border-radius:8px;
 }
 
-/* FOOTER */
 footer{
 background:#2e7d32;
 color:white;
@@ -151,27 +118,13 @@ text-align:center;
 padding:15px;
 font-size:14px;
 }
-
-@media(max-width:768px){
-.hero h1{font-size:24px;}
-.gallery img{width:100%;}
-nav .links{display:none;}
-}
 </style>
 </head>
 
 <body>
 
 <nav>
-<h2>Mahesh Kirana</h2>
-
-<div class="links">
-<a href="#services">Services</a>
-<a href="#groceries">Groceries</a>
-<a href="#vegetables">Vegetables</a>
-<a href="#contact">Location</a>
-</div>
-
+<h2>Mahesh Kirana & Xerox</h2>
 <button onclick="toggleLanguage()" id="langBtn">English</button>
 </nav>
 
@@ -183,45 +136,59 @@ nav .links{display:none;}
 <a href="https://wa.me/919640695662" class="whatsapp-btn" id="whatsappBtn"></a>
 </div>
 
-<div class="offer" id="offerText"></div>
-
 <!-- SERVICES -->
-<section id="services">
+<section>
 <h2 id="servicesTitle"></h2>
-<div class="grid">
-<div class="card"><h3 id="srv1Title"></h3><p id="srv1Desc"></p></div>
-<div class="card"><h3 id="srv2Title"></h3><p id="srv2Desc"></p></div>
-<div class="card"><h3 id="srv3Title"></h3><p id="srv3Desc"></p></div>
-</div>
+<div class="card" id="servicesList"></div>
 </section>
 
 <!-- GROCERIES -->
-<section id="groceries">
+<section>
 <h2 id="groceryTitle"></h2>
-<div class="grid">
 <div class="card" id="groceryList"></div>
-</div>
 </section>
 
 <!-- VEGETABLES -->
-<section id="vegetables">
+<section>
 <h2 id="vegTitle"></h2>
-<div class="grid">
 <div class="card" id="vegList"></div>
-</div>
+</section>
+
+<!-- DRY FRUITS -->
+<section>
+<h2 id="dryTitle"></h2>
+<div class="card" id="dryList"></div>
+</section>
+
+<!-- STATIONERY -->
+<section>
+<h2 id="stationeryTitle"></h2>
+<div class="card" id="stationeryList"></div>
+</section>
+
+<!-- PUJA -->
+<section>
+<h2 id="pujaTitle"></h2>
+<div class="card" id="pujaList"></div>
+</section>
+
+<!-- DRINKS -->
+<section>
+<h2 id="drinkTitle"></h2>
+<div class="card" id="drinkList"></div>
 </section>
 
 <!-- GALLERY -->
 <section>
 <h2 id="photoTitle"></h2>
 <div class="gallery">
-<img src="shop_front_photo.jpg.jpeg">
-<img src="shop.jpg.jpeg">
+<img src="shop_front_photo.jpg">
+<img src="shop.jpg">
 </div>
 </section>
 
 <!-- LOCATION -->
-<section class="map" id="contact">
+<section class="map">
 <h2 id="contactTitle"></h2>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.2946667280107!2d83.08162759999999!3d18.011523500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3bd9c9ccec4d1d%3A0x17992d1d0137f734!2sMahesh%20Kirana%20%26%20Xerox!5e0!3m2!1sen!2sin!4v1772531721855!5m2!1sen!2sin"></iframe>
 </section>
@@ -231,6 +198,7 @@ nav .links{display:none;}
 </footer>
 
 <script>
+
 let isTelugu=true;
 
 function setTelugu(){
@@ -239,22 +207,23 @@ document.getElementById("subtitle").innerText="2005 నుండి విశ్
 document.getElementById("servicesTitle").innerText="మా సేవలు";
 document.getElementById("groceryTitle").innerText="కిరాణా సరుకులు";
 document.getElementById("vegTitle").innerText="తాజా కూరగాయలు";
+document.getElementById("dryTitle").innerText="డ్రై ఫ్రూట్స్ & మసాలాలు";
+document.getElementById("stationeryTitle").innerText="స్టేషనరీ వస్తువులు";
+document.getElementById("pujaTitle").innerText="పూజా సామగ్రి";
+document.getElementById("drinkTitle").innerText="కూల్ డ్రింక్స్";
 document.getElementById("photoTitle").innerText="దుకాణ ఫోటోలు";
 document.getElementById("contactTitle").innerText="మా స్థానం";
-document.getElementById("offerText").innerText="🎉 ఈ రోజు తాజా కూరగాయలు అందుబాటులో ఉన్నాయి!";
 document.getElementById("callBtn").innerText="📞 కాల్ చేయండి";
 document.getElementById("whatsappBtn").innerText="💬 వాట్సాప్";
 document.getElementById("footerText").innerText="© 2005 - 2026 మహేష్ కిరాణా & జిరాక్స్";
 
-document.getElementById("srv1Title").innerText="జిరాక్స్ & లామినేషన్";
-document.getElementById("srv1Desc").innerText="బ్లాక్ & వైట్ ప్రింటింగ్ సేవలు.";
-document.getElementById("srv2Title").innerText="మొబైల్ రీచార్జ్";
-document.getElementById("srv2Desc").innerText="ఎయిర్టెల్, జియో, VI.";
-document.getElementById("srv3Title").innerText="బిల్ చెల్లింపు";
-document.getElementById("srv3Desc").innerText="విద్యుత్ బిల్లు సేవలు.";
-
-document.getElementById("groceryList").innerText="బియ్యం, గోధుమ పిండి, శనగ పిండి, మసాలాలు, కాజూ, బాదం, వేరుశెనగలు.";
+document.getElementById("servicesList").innerText="జిరాక్స్, లామినేషన్, మొబైల్ రీచార్జ్, కరెంట్ బిల్ చెల్లింపు.";
+document.getElementById("groceryList").innerText="బియ్యం, గోధుమ పిండి, శనగ పిండి, అన్ని రకాల పిండి, చక్కెర, నూనె.";
 document.getElementById("vegList").innerText="ఉల్లిపాయ, ఆలుగడ్డ, టమోటా, మిర్చి, వెల్లుల్లి.";
+document.getElementById("dryList").innerText="కాజూ, బాదం, వేరుశెనగలు, మసాలా దినుసులు.";
+document.getElementById("stationeryList").innerText="పెన్స్, పుస్తకాలు, ఫైళ్లు.";
+document.getElementById("pujaList").innerText="అగర్బత్తి, కర్పూరం, కొబ్బరి, పూజా సామగ్రి.";
+document.getElementById("drinkList").innerText="కూల్ డ్రింక్స్ మరియు శీతల పానీయాలు.";
 
 document.getElementById("langBtn").innerText="English";
 }
@@ -265,22 +234,23 @@ document.getElementById("subtitle").innerText="Trusted Services Since 2005";
 document.getElementById("servicesTitle").innerText="Our Services";
 document.getElementById("groceryTitle").innerText="Groceries";
 document.getElementById("vegTitle").innerText="Fresh Vegetables";
+document.getElementById("dryTitle").innerText="Dry Fruits & Spices";
+document.getElementById("stationeryTitle").innerText="Stationery Items";
+document.getElementById("pujaTitle").innerText="Puja Items";
+document.getElementById("drinkTitle").innerText="Cold Drinks";
 document.getElementById("photoTitle").innerText="Shop Photos";
 document.getElementById("contactTitle").innerText="Our Location";
-document.getElementById("offerText").innerText="🎉 Fresh Vegetables Available Today!";
 document.getElementById("callBtn").innerText="📞 Call";
 document.getElementById("whatsappBtn").innerText="💬 WhatsApp";
 document.getElementById("footerText").innerText="© 2005 - 2026 Mahesh Kirana & Xerox";
 
-document.getElementById("srv1Title").innerText="Xerox & Lamination";
-document.getElementById("srv1Desc").innerText="Black & White Printing.";
-document.getElementById("srv2Title").innerText="Mobile Recharge";
-document.getElementById("srv2Desc").innerText="Airtel, Jio, VI.";
-document.getElementById("srv3Title").innerText="Bill Payment";
-document.getElementById("srv3Desc").innerText="Electricity bill services.";
-
-document.getElementById("groceryList").innerText="Rice, wheat flour, gram flour, spices, cashew, badam, groundnuts.";
+document.getElementById("servicesList").innerText="Xerox, Lamination, Mobile Recharge, Electricity Bill Payment.";
+document.getElementById("groceryList").innerText="Rice, wheat flour, gram flour, all flours, sugar, oil.";
 document.getElementById("vegList").innerText="Onion, potato, tomato, mirchi, garlic.";
+document.getElementById("dryList").innerText="Cashew, badam, groundnuts, spices.";
+document.getElementById("stationeryList").innerText="Pens, notebooks, files.";
+document.getElementById("pujaList").innerText="Agarbatti, camphor, coconut and pooja materials.";
+document.getElementById("drinkList").innerText="Cold drinks and beverages.";
 
 document.getElementById("langBtn").innerText="తెలుగు";
 }
@@ -291,6 +261,7 @@ else{setTelugu();isTelugu=true;}
 }
 
 window.onload=setTelugu;
+
 </script>
 
 </body>
