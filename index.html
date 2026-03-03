@@ -9,161 +9,173 @@
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
 }
 
-body {
-    background: #f4f6f9;
-    color: #333;
+body{
+    background:#f4f6f9;
+    color:#333;
+}
+
+section{
+    padding:70px 20px;
+    text-align:center;
+}
+
+h2{
+    margin-bottom:40px;
+    color:#2e7d32;
+    font-size:28px;
 }
 
 /* NAVBAR */
 
-nav {
-    background: #2e7d32;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
+nav{
+    background:#2e7d32;
+    color:white;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-nav h2 {
-    font-size: 20px;
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 14px;
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:14px;
 }
 
 /* HERO */
 
-.hero {
-    background: linear-gradient(135deg,#2e7d32,#ff9800);
-    color: white;
-    text-align: center;
-    padding: 70px 20px;
+.hero{
+    background:linear-gradient(135deg,#2e7d32,#ff9800);
+    color:white;
+    padding:80px 20px;
 }
 
-.hero h1 {
-    font-size: 36px;
+.hero h1{
+    font-size:40px;
 }
 
-.hero p {
-    margin-top: 10px;
-    font-size: 18px;
+.hero p{
+    margin-top:10px;
 }
 
-.buttons {
-    margin-top: 20px;
+.buttons{
+    margin-top:25px;
 }
 
-.btn {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
+.btn{
+    display:inline-block;
+    margin:10px;
+    padding:12px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
 }
 
-.call-btn {
-    background: white;
-    color: #2e7d32;
+.call-btn{
+    background:white;
+    color:#2e7d32;
 }
 
-.whatsapp-btn {
-    background: #25D366;
-    color: white;
+.whatsapp-btn{
+    background:#25D366;
+    color:white;
 }
 
-.btn:hover {
-    transform: scale(1.05);
+.btn:hover{
+    transform:scale(1.05);
 }
 
-/* SECTIONS */
+/* CARDS */
 
-section {
-    padding: 60px 20px;
-    text-align: center;
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
 }
 
-h2 {
-    margin-bottom: 30px;
-    color: #2e7d32;
+.card{
+    background:white;
+    padding:25px;
+    width:260px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+    opacity:0;
+    transform:translateY(30px);
 }
 
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
+.card.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
-.card {
-    background: white;
-    padding: 25px;
-    width: 260px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
+.card:hover{
+    transform:translateY(-8px);
 }
 
-.card:hover {
-    transform: translateY(-5px);
+.card h3{
+    color:#ff9800;
+    margin-bottom:10px;
 }
 
-.card h3 {
-    color: #ff9800;
-    margin-bottom: 10px;
+/* GALLERY */
+
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+
+.gallery img{
+    width:100%;
+    max_width:400px;
+    height:auto;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* MAP */
 
-iframe {
-    width: 100%;
-    max-width: 800px;
-    height: 300px;
-    border-radius: 15px;
-    border: none;
+iframe{
+    width:100%;
+    max-width:800px;
+    height:300px;
+    border:none;
+    border-radius:15px;
 }
 
 /* FOOTER */
 
-footer {
-    background: #2e7d32;
-    color: white;
-    text-align: center;
-    padding: 20px;
+footer{
+    background:#2e7d32;
+    color:white;
+    padding:20px;
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
-    nav ul {
-        display: none;
-    }
-    .hero h1 {
-        font-size: 26px;
-    }
-    .cards {
-        flex-direction: column;
-        align-items: center;
-    }
+    nav ul{display:none;}
+    .hero h1{font-size:26px;}
+    .cards{flex-direction:column;align-items:center;}
+    .gallery img{width:90%;}
 }
 
 </style>
@@ -175,7 +187,7 @@ footer {
     <h2>Mahesh Kirana & Xerox</h2>
     <ul>
         <li><a href="#services">Services</a></li>
-        <li><a href="#groceries">Groceries</a></li>
+        <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
@@ -192,67 +204,107 @@ footer {
 </div>
 
 <section id="services">
-    <h2>Our Services (సేవలు)</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Xerox & Printing</h3>
-            <p>Black & White Xerox, Online Forms, Aadhar & PAN Print.</p>
-        </div>
-        <div class="card">
-            <h3>Lamination</h3>
-            <p>Certificate & document lamination available.</p>
-        </div>
-        <div class="card">
-            <h3>Mobile Recharges</h3>
-            <p>Airtel, Jio, VI Recharge services.</p>
-        </div>
-        <div class="card">
-            <h3>Electricity Bill Payment</h3>
-            <p>Quick and easy current bill payment.</p>
-        </div>
-        <div class="card">
-            <h3>Puja Items</h3>
-            <p>Agarbatti, Camphor, Coconut & all pooja materials.</p>
-        </div>
-        <div class="card">
-            <h3>Cold Drinks</h3>
-            <p>Soft drinks and beverages available.</p>
-        </div>
-    </div>
+<h2>Our Services (సేవలు)</h2>
+<div class="cards">
+
+<div class="card">
+<h3>🖨 Xerox & Printing</h3>
+<p>Black & White Xerox, Online Forms, Aadhar & PAN Print.</p>
+</div>
+
+<div class="card">
+<h3>📄 Lamination</h3>
+<p>Certificates & important document lamination.</p>
+</div>
+
+<div class="card">
+<h3>📱 Mobile Recharges</h3>
+<p>Airtel, Jio, VI recharge services available.</p>
+</div>
+
+<div class="card">
+<h3>💡 Electricity Bill</h3>
+<p>Quick current bill payment service.</p>
+</div>
+
+<div class="card">
+<h3>🪔 Puja Items</h3>
+<p>Agarbatti, Camphor & pooja materials.</p>
+</div>
+
+<div class="card">
+<h3>🥤 Cold Drinks</h3>
+<p>Soft drinks & beverages available with Full Cooling.</p>
+</div>
+
+</div>
 </section>
 
-<section id="groceries">
-    <h2>Groceries & Vegetables (కిరాణా & కూరగాయలు)</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Daily Groceries</h3>
-            <p>Rice, Dal, Oil, Sugar, Atta, Soaps & more.</p>
-        </div>
-        <div class="card">
-            <h3>Fresh Vegetables</h3>
-            <p>Onion, Tomato, Potato, Mirchi, Garlic.</p>
-        </div>
-        <div class="card">
-            <h3>Stationery</h3>
-            <p>Pens, Notebooks, Files & school materials.</p>
-        </div>
-    </div>
+<section>
+<h2>Groceries & Vegetables (కిరాణా & కూరగాయలు)</h2>
+<div class="cards">
+
+<div class="card">
+<h3>🛒 Daily Groceries</h3>
+<p>Rice, Dal, Oil, Sugar, Atta & household items.</p>
+</div>
+
+<div class="card">
+<h3>🥕 Fresh Vegetables</h3>
+<p>Onion, Tomato, Potato, Mirchi, Garlic.</p>
+</div>
+
+<div class="card">
+<h3>📚 Stationery</h3>
+<p>Pens, Notebooks, Files & school materials.</p>
+</div>
+
+</div>
+</section>
+
+<section id="gallery">
+<h2>Shop Gallery (ఫోటోలు)</h2>
+<div class="gallery">
+
+<!-- Replace these with your real shop photos -->
+<img src="shop_front_photo.jpg" alt="Shop Front">
+<img src="shop.jpg" alt="Inside Shop">
+    
+</div>
 </section>
 
 <section id="contact">
-    <h2>Contact & Location (స్థానం)</h2>
-    <p>📍 Opposite Grama Sachivalayam, Andhra Pradesh</p>
-    <p>📞 9640695662</p>
-    <p>🕒 Open Daily: 6:00 AM – 10:00 PM</p>
+<h2>Contact & Location (స్థానం)</h2>
+<p>📍 Opposite Grama Sachivalayam, Andhra Pradesh</p>
+<p>📞 9640695662</p>
+<p>🕒 Open Daily: 6:30 AM – 10:00 PM</p>
 
-    <br>
+<br>
 
-    <iframe src="https://www.google.com/maps?q=Andhra%20Pradesh&output=embed"></iframe>
+<iframe src="https://www.google.com/maps?q=Andhra%20Pradesh&output=embed"></iframe>
 </section>
 
 <footer>
-    © 2005 - 2026 Mahesh Kirana & Xerox | Established in 2005 as M Venkata Raju Store
+© 2005 - 2026 Mahesh Kirana & Xerox | Established in 2005 as M Venkata Raju Store
 </footer>
+
+<script>
+// Animation on scroll
+const cards = document.querySelectorAll('.card');
+
+function revealCards(){
+    const triggerBottom = window.innerHeight * 0.9;
+    cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        if(cardTop < triggerBottom){
+            card.classList.add('show');
+        }
+    });
+}
+
+window.addEventListener('scroll', revealCards);
+revealCards();
+</script>
 
 </body>
 </html>
