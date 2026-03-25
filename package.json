@@ -1,0 +1,13 @@
+{
+  "name": "kirana-shop-website",
+  "version": "1.0.0",
+  "description": "Professional website for Mahesh Kirana & Xerox",
+  "scripts": {
+    "start": "npx --yes serve . --listen 3000"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["kirana", "shop", "website"],
+  "license": "UNLICENSED"
+}

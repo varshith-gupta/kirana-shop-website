@@ -1,268 +1,1631 @@
 <!DOCTYPE html>
-<html>
+<html lang="te">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mahesh Kirana & Xerox</title>
+<title>Mahesh Kirana & Xerox – Since 2005</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Noto Sans Telugu',sans-serif;
-scroll-behavior:smooth;
+/* ═══════════════════════════════════════════
+   CSS VARIABLES & RESET
+═══════════════════════════════════════════ */
+:root {
+  --green-900: #1b5e20;
+  --green-800: #2e7d32;
+  --green-600: #43a047;
+  --green-400: #66bb6a;
+  --green-100: #e8f5e9;
+  --amber:     #f9a825;
+  --amber-light: #fff8e1;
+  --wa:        #25D366;
+  --white:     #ffffff;
+  --off-white: #f8faf9;
+  --gray-50:   #f9fafb;
+  --gray-100:  #f3f4f6;
+  --gray-200:  #e5e7eb;
+  --gray-500:  #6b7280;
+  --gray-800:  #1f2937;
+  --shadow-xs: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.10);
+  --shadow-md: 0 6px 20px rgba(0,0,0,0.12);
+  --shadow-lg: 0 16px 40px rgba(0,0,0,0.15);
+  --shadow-xl: 0 24px 60px rgba(0,0,0,0.18);
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --r-full: 9999px;
+  --trans: 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 
-body{
-background:#ffffff;
-color:#333;
-line-height:1.6;
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans Telugu','Inter',sans-serif;
+  background: var(--off-white);
+  color: var(--gray-800);
+  line-height: 1.65;
+  overflow-x: hidden;
 }
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 8%;
-border-bottom:1px solid #eee;
-background:white;
-position:sticky;
-top:0;
-z-index:1000;
+img { max-width:100%; display:block; }
+a  { text-decoration:none; color:inherit; }
+ul { list-style:none; }
+
+/* ═══════════════════════════════════════════
+   SCROLL-REVEAL ANIMATION
+═══════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-nav h2{color:#2e7d32;}
-
-nav button{
-background:#2e7d32;
-color:white;
-border:none;
-padding:6px 14px;
-border-radius:6px;
-cursor:pointer;
+/* ═══════════════════════════════════════════
+   TOP OFFER BANNER
+═══════════════════════════════════════════ */
+.offer-banner {
+  background: linear-gradient(90deg, var(--green-900) 0%, var(--green-600) 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
-.hero{
-background:#f1f8f4;
-padding:90px 8%;
-text-align:center;
+.offer-banner .offer-tag {
+  background: var(--amber);
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--r-full);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  flex-shrink: 0;
 }
 
-.hero h1{
-font-size:32px;
-color:#2e7d32;
-margin-bottom:10px;
+/* ═══════════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════════ */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-xs);
 }
 
-.hero p{margin-bottom:20px;}
-
-.hero a{
-display:inline-block;
-margin:6px;
-padding:10px 22px;
-border-radius:6px;
-text-decoration:none;
-color:white;
-font-weight:600;
+.nav-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 5%;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.call-btn{background:#2e7d32;}
-.whatsapp-btn{background:#25D366;}
-
-section{
-padding:60px 8%;
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
 }
 
-section h2{
-text-align:center;
-color:#2e7d32;
-margin-bottom:30px;
-font-size:24px;
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, var(--green-800), var(--green-600));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 17px;
+  box-shadow: 0 4px 12px rgba(46,125,50,0.35);
+  flex-shrink: 0;
 }
 
-.card{
-background:#fafafa;
-border:1px solid #eee;
-padding:18px;
-border-radius:8px;
-max-width:600px;
-margin:10px auto;
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
 }
 
-.gallery{
-display:flex;
-flex-wrap:wrap;
-gap:20px;
-justify-content:center;
+.brand-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--green-900);
+  letter-spacing: -0.2px;
 }
 
-.gallery img{
-width:300px;
-border-radius:8px;
+.brand-tagline {
+  font-size: 11px;
+  color: var(--gray-500);
+  font-weight: 500;
 }
 
-.map iframe{
-width:100%;
-height:350px;
-border:none;
-border-radius:8px;
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-footer{
-background:#2e7d32;
-color:white;
-text-align:center;
-padding:15px;
-font-size:14px;
+.nav-phone-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--green-800);
+  padding: 7px 14px;
+  border: 1.5px solid var(--green-200, #a5d6a7);
+  border-radius: var(--r-full);
+  transition: var(--trans);
+}
+
+.nav-phone-link:hover {
+  background: var(--green-100);
+  border-color: var(--green-600);
+}
+
+.lang-btn {
+  background: var(--green-800);
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: var(--r-full);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  letter-spacing: 0.3px;
+  transition: var(--trans);
+  box-shadow: 0 2px 8px rgba(46,125,50,0.30);
+}
+
+.lang-btn:hover {
+  background: var(--green-900);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(46,125,50,0.40);
+}
+
+/* ═══════════════════════════════════════════
+   HERO  (full-width photo background)
+═══════════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--green-900);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.32;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(27,94,32,0.92) 0%,
+    rgba(27,94,32,0.75) 50%,
+    rgba(46,125,50,0.65) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 80px 5%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-left {}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.30);
+  color: rgba(255,255,255,0.95);
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--r-full);
+  margin-bottom: 20px;
+  letter-spacing: 0.3px;
+}
+
+.hero-badge i { color: var(--amber); font-size: 11px; }
+
+.hero h1 {
+  font-size: clamp(30px, 4.5vw, 52px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.hero h1 span {
+  color: var(--amber);
+}
+
+.hero-desc {
+  font-size: 16px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 36px;
+  line-height: 1.7;
+  max-width: 420px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn-primary, .btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 14px 28px;
+  border-radius: var(--r-full);
+  font-weight: 700;
+  font-size: 15px;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  transition: var(--trans);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary {
+  background: white;
+  color: var(--green-900);
+}
+
+.btn-primary:hover {
+  background: var(--amber);
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-wa {
+  background: var(--wa);
+  color: white;
+}
+
+.btn-wa:hover {
+  background: #1db954;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Hero right — trust card */
+.hero-trust {
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.20);
+  border-radius: var(--r-lg);
+  padding: 32px 28px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.trust-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.60);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.trust-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.trust-stat {
+  text-align: center;
+  padding: 16px 12px;
+  background: rgba(255,255,255,0.10);
+  border-radius: var(--r-md);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.trust-stat .num {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--amber);
+  line-height: 1;
+  font-family: 'Inter', sans-serif;
+}
+
+.trust-stat .label {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.75);
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* ═══════════════════════════════════════════
+   FEATURES STRIP
+═══════════════════════════════════════════ */
+.features-strip {
+  background: white;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.features-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 22px 5%;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  border-right: 1px solid var(--gray-200);
+  flex: 1;
+  min-width: 180px;
+  justify-content: center;
+}
+
+.feature-item:last-child { border-right: none; }
+
+.feature-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--green-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green-800);
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.feature-text .f-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.feature-text .f-sub {
+  font-size: 11.5px;
+  color: var(--gray-500);
+}
+
+/* ═══════════════════════════════════════════
+   PAGE WRAPPER
+═══════════════════════════════════════════ */
+.page-wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* ═══════════════════════════════════════════
+   SECTION GENERIC
+═══════════════════════════════════════════ */
+.section {
+  padding: 72px 5%;
+}
+
+.section-alt {
+  background: white;
+}
+
+.sec-header {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.sec-label {
+  display: inline-block;
+  background: var(--green-100);
+  color: var(--green-800);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: var(--r-full);
+  margin-bottom: 10px;
+}
+
+.sec-header h2 {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 800;
+  color: var(--gray-800);
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+
+.sec-header p {
+  font-size: 15px;
+  color: var(--gray-500);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.sec-divider {
+  width: 44px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green-800), var(--green-400));
+  border-radius: var(--r-full);
+  margin: 14px auto 0;
+}
+
+/* ═══════════════════════════════════════════
+   SERVICES GRID (horizontal cards)
+═══════════════════════════════════════════ */
+.services-wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.svc-card {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-lg);
+  padding: 30px 24px;
+  text-align: center;
+  transition: var(--trans);
+  box-shadow: var(--shadow-xs);
+  position: relative;
+  overflow: hidden;
+}
+
+.svc-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green-800), var(--green-400));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--trans);
+}
+
+.svc-card:hover::before { transform: scaleX(1); }
+
+.svc-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-color: #c8e6c9;
+}
+
+.svc-emoji {
+  font-size: 36px;
+  margin-bottom: 14px;
+  display: block;
+  line-height: 1;
+}
+
+.svc-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: 6px;
+}
+
+.svc-card p {
+  font-size: 12.5px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════
+   PRODUCT GRID (icon + text cards)
+═══════════════════════════════════════════ */
+.product-wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 18px;
+}
+
+.prod-card {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-md);
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: var(--trans);
+  box-shadow: var(--shadow-xs);
+}
+
+.prod-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  border-color: #c8e6c9;
+}
+
+.prod-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.prod-icon.c-green  { background: #e8f5e9; }
+.prod-icon.c-blue   { background: #e3f2fd; }
+.prod-icon.c-orange { background: #fff3e0; }
+.prod-icon.c-purple { background: #f3e5f5; }
+.prod-icon.c-red    { background: #fce4ec; }
+.prod-icon.c-teal   { background: #e0f2f1; }
+.prod-icon.c-amber  { background: #fff8e1; }
+
+.prod-body h3 {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: 5px;
+}
+
+.prod-body p {
+  font-size: 12.5px;
+  color: var(--gray-500);
+  line-height: 1.55;
+}
+
+/* ═══════════════════════════════════════════
+   HOURS SECTION
+═══════════════════════════════════════════ */
+.hours-grid {
+  max-width: 780px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.hour-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-xs);
+}
+
+.hour-row.today {
+  background: var(--green-100);
+  border-color: #a5d6a7;
+}
+
+.hour-day {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-800);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hour-day i { color: var(--green-600); font-size: 12px; }
+.today .hour-day i { color: var(--green-800); }
+
+.hour-time {
+  font-size: 13px;
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+.today .hour-time {
+  color: var(--green-800);
+  font-weight: 700;
+}
+
+.closed-tag {
+  font-size: 12px;
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+  font-weight: 600;
+}
+
+.open-tag {
+  font-size: 12px;
+  background: #dcfce7;
+  color: #16a34a;
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+  font-weight: 600;
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(22,163,74,0.4); }
+  50%       { box-shadow: 0 0 0 6px rgba(22,163,74,0); }
+}
+
+/* ═══════════════════════════════════════════
+   GALLERY
+═══════════════════════════════════════════ */
+.gallery-grid {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.gallery-item {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 16/10;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img { transform: scale(1.06); }
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 24px 20px 16px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.72));
+  color: white;
+}
+
+.gallery-caption h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.gallery-caption p {
+  font-size: 12.5px;
+  opacity: 0.80;
+}
+
+/* ═══════════════════════════════════════════
+   MAP & CONTACT
+═══════════════════════════════════════════ */
+.location-grid {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px;
+  align-items: start;
+}
+
+.map-box {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 16/9;
+}
+
+.map-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.contact-card {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-lg);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--gray-100);
+  text-decoration: none;
+  color: inherit;
+  transition: var(--trans);
+}
+
+.contact-row:last-child { border-bottom: none; }
+.contact-row:hover { color: var(--green-800); }
+
+.c-ico {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+  color: white;
+}
+
+.c-ico.phone   { background: var(--green-800); }
+.c-ico.wa      { background: var(--wa); }
+.c-ico.hours   { background: var(--amber); color: #000; }
+.c-ico.address { background: #e53935; }
+
+.c-text .c-label {
+  font-size: 11px;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+}
+
+.c-text .c-val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+/* ═══════════════════════════════════════════
+   FLOATING WHATSAPP BUTTON
+═══════════════════════════════════════════ */
+.wa-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  width: 58px;
+  height: 58px;
+  background: var(--wa);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 26px;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+  transition: var(--trans);
+  animation: bounce-in 0.6s 1s both;
+}
+
+.wa-float:hover {
+  transform: scale(1.12);
+  box-shadow: 0 10px 30px rgba(37,211,102,0.55);
+}
+
+@keyframes bounce-in {
+  0%   { opacity:0; transform: scale(0.4); }
+  70%  { transform: scale(1.1); }
+  100% { opacity:1; transform: scale(1); }
+}
+
+/* pulse ring */
+.wa-float::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border: 2.5px solid rgba(37,211,102,0.50);
+  border-radius: 50%;
+  animation: wa-ring 2s ease-out infinite;
+}
+
+@keyframes wa-ring {
+  0%   { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.55); opacity: 0; }
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer {
+  background: var(--green-900);
+  color: rgba(255,255,255,0.88);
+}
+
+.footer-top {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 5% 32px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 36px;
+}
+
+.footer-brand .fb-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.footer-brand .fb-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+  max-width: 280px;
+}
+
+.footer-brand .fb-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 5px 12px;
+  border-radius: var(--r-full);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--amber);
+}
+
+.footer-col h4 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  color: rgba(255,255,255,0.50);
+  margin-bottom: 16px;
+}
+
+.footer-col li {
+  font-size: 13px;
+  color: rgba(255,255,255,0.78);
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.footer-col li i {
+  color: rgba(255,255,255,0.42);
+  width: 14px;
+  font-size: 12px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding: 16px 5%;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.50);
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .hero-content { grid-template-columns: 1fr; gap: 36px; }
+  .hero-trust { max-width: 420px; }
+  .location-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .nav-phone-link { display: none; }
+  .brand-tagline { display: none; }
+  .offer-banner { font-size: 12px; padding: 8px 12px; }
+  .section { padding: 52px 5%; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .hours-grid { grid-template-columns: 1fr; }
+  .features-inner { gap: 0; }
+  .feature-item { border-right: none; border-bottom: 1px solid var(--gray-200); }
+  .feature-item:last-child { border-bottom: none; }
+  .footer-top { grid-template-columns: 1fr; gap: 24px; }
+  .trust-stats { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 420px) {
+  .hero-actions { flex-direction: column; }
+  .btn-primary, .btn-wa { justify-content: center; }
 }
 </style>
 </head>
-
 <body>
 
+<!-- OFFER BANNER -->
+<div class="offer-banner">
+  <span class="offer-tag" id="offerTag">ఆఫర్</span>
+  <span id="offerText">తాజా కిరాణా సరుకులు మరియు జిరాక్స్ సేవలు — ఒకే చోట, అత్యంత తక్కువ ధరల్లో!</span>
+</div>
+
+<!-- NAVBAR -->
 <nav>
-<h2>Mahesh Kirana & Xerox</h2>
-<button onclick="toggleLanguage()" id="langBtn">English</button>
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <div class="brand-icon"><i class="fas fa-store"></i></div>
+      <div class="brand-text">
+        <span class="brand-name">Mahesh Kirana &amp; Xerox</span>
+        <span class="brand-tagline" id="navTagline">Since 2005 · Trusted by Thousands</span>
+      </div>
+    </div>
+    <div class="nav-right">
+      <a href="tel:9640695662" class="nav-phone-link">
+        <i class="fas fa-phone-alt"></i>
+        <span>96406 95662</span>
+      </a>
+      <button class="lang-btn" onclick="toggleLanguage()" id="langBtn">English</button>
+    </div>
+  </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-<h1 id="title"></h1>
-<p id="subtitle"></p>
+  <img class="hero-bg" src="shop_front_photo.jpg" alt="Mahesh Kirana & Xerox shop front">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <i class="fas fa-award"></i>
+        <span id="heroBadge">2005 నుండి నమ్మకమైన దుకాణం</span>
+      </div>
+      <h1 id="heroTitle">మహేష్ <span>కిరాణా</span><br>&amp; జిరాక్స్</h1>
+      <p class="hero-desc" id="heroDesc">తాజా కిరాణా సరుకులు, కూరగాయలు, జిరాక్స్ సేవలు — అన్నీ ఒకే చోట. మీ పక్కింటి నమ్మకమైన దుకాణం.</p>
+      <div class="hero-actions">
+        <a href="tel:9640695662" class="btn-primary" id="callBtn">
+          <i class="fas fa-phone-alt"></i> కాల్ చేయండి
+        </a>
+        <a href="https://wa.me/919640695662" class="btn-wa" id="waBtn">
+          <i class="fab fa-whatsapp"></i> వాట్సాప్
+        </a>
+      </div>
+    </div>
+    <div class="hero-trust reveal">
+      <div class="trust-title" id="trustTitle">మా గురించి</div>
+      <div class="trust-stats">
+        <div class="trust-stat">
+          <div class="num" id="stat1Num">20+</div>
+          <div class="label" id="stat1Lab">సంవత్సరాలు</div>
+        </div>
+        <div class="trust-stat">
+          <div class="num" id="stat2Num">500+</div>
+          <div class="label" id="stat2Lab">కస్టమర్లు</div>
+        </div>
+        <div class="trust-stat">
+          <div class="num" id="stat3Num">7</div>
+          <div class="label" id="stat3Lab">విభాగాలు</div>
+        </div>
+        <div class="trust-stat">
+          <div class="num" id="stat4Num">6</div>
+          <div class="label" id="stat4Lab">రోజులు తెరచి</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<a href="tel:9640695662" class="call-btn" id="callBtn"></a>
-<a href="https://wa.me/919640695662" class="whatsapp-btn" id="whatsappBtn"></a>
+<!-- FEATURES STRIP -->
+<div class="features-strip">
+  <div class="features-inner">
+    <div class="feature-item">
+      <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+      <div class="feature-text">
+        <div class="f-title" id="feat1T">తాజా సరుకులు</div>
+        <div class="f-sub" id="feat1S">ప్రతిరోజూ తాజా</div>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon"><i class="fas fa-tag"></i></div>
+      <div class="feature-text">
+        <div class="f-title" id="feat2T">మంచి ధరలు</div>
+        <div class="f-sub" id="feat2S">సరసమైన ధరలు</div>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div>
+      <div class="feature-text">
+        <div class="f-title" id="feat3T">మీ పక్కన</div>
+        <div class="f-sub" id="feat3S">సులభంగా చేరుకోవచ్చు</div>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon"><i class="fas fa-headset"></i></div>
+      <div class="feature-text">
+        <div class="f-title" id="feat4T">స్నేహపూర్వక సేవ</div>
+        <div class="f-sub" id="feat4S">వ్యక్తిగత శ్రద్ధ</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- SERVICES -->
-<section>
-<h2 id="servicesTitle"></h2>
-<div class="card" id="servicesList"></div>
+<section class="section">
+  <div class="page-wrap">
+    <div class="sec-header reveal">
+      <span class="sec-label" id="svcLabel">మా సేవలు</span>
+      <h2 id="svcTitle">మేము అందించే సేవలు</h2>
+      <p id="svcDesc">కిరాణా నుండి ఆఫీస్ సేవల వరకు — అన్నీ ఒకే చోట</p>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="services-wrap" id="servicesList"></div>
+  </div>
 </section>
 
 <!-- GROCERIES -->
-<section>
-<h2 id="groceryTitle"></h2>
-<div class="card" id="groceryList"></div>
+<section class="section section-alt">
+  <div class="page-wrap">
+    <div class="sec-header reveal">
+      <span class="sec-label" id="grocLabel">కిరాణా</span>
+      <h2 id="grocTitle">కిరాణా సరుకులు</h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="product-wrap" id="groceryList"></div>
+  </div>
 </section>
 
 <!-- VEGETABLES -->
-<section>
-<h2 id="vegTitle"></h2>
-<div class="card" id="vegList"></div>
+<section class="section">
+  <div class="page-wrap">
+    <div class="sec-header reveal">
+      <span class="sec-label" id="vegLabel">కూరగాయలు</span>
+      <h2 id="vegTitle">తాజా కూరగాయలు</h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="product-wrap" id="vegList"></div>
+  </div>
 </section>
 
 <!-- DRY FRUITS -->
-<section>
-<h2 id="dryTitle"></h2>
-<div class="card" id="dryList"></div>
+<section class="section section-alt">
+  <div class="page-wrap">
+    <div class="sec-header reveal">
+      <span class="sec-label" id="dryLabel">డ్రై ఫ్రూట్స్</span>
+      <h2 id="dryTitle">డ్రై ఫ్రూట్స్ &amp; మసాలాలు</h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="product-wrap" id="dryList"></div>
+  </div>
 </section>
 
 <!-- STATIONERY -->
-<section>
-<h2 id="stationeryTitle"></h2>
-<div class="card" id="stationeryList"></div>
+<section class="section">
+  <div class="page-wrap">
+    <div class="sec-header reveal">
+      <span class="sec-label" id="stationLabel">స్టేషనరీ</span>
+      <h2 id="stationTitle">స్టేషనరీ వస్తువులు</h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="product-wrap" id="stationList"></div>
+  </div>
 </section>
 
 <!-- PUJA -->
-<section>
-<h2 id="pujaTitle"></h2>
-<div class="card" id="pujaList"></div>
+<section class="section section-alt">
+  <div class="page-wrap">
+    <div class="sec-header reveal">
+      <span class="sec-label" id="pujaLabel">పూజా సామగ్రి</span>
+      <h2 id="pujaTitle">పూజా సామగ్రి</h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="product-wrap" id="pujaList"></div>
+  </div>
 </section>
 
 <!-- DRINKS -->
-<section>
-<h2 id="drinkTitle"></h2>
-<div class="card" id="drinkList"></div>
+<section class="section">
+  <div class="page-wrap">
+    <div class="sec-header reveal">
+      <span class="sec-label" id="drinkLabel">పానీయాలు</span>
+      <h2 id="drinkTitle">కూల్ డ్రింక్స్</h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="product-wrap" id="drinkList"></div>
+  </div>
 </section>
 
 <!-- GALLERY -->
-<section>
-<h2 id="photoTitle"></h2>
-<div class="gallery">
-<img src="shop_front_photo.jpg">
-<img src="shop.jpg">
-</div>
+<section class="section section-alt">
+  <div class="page-wrap">
+    <div class="sec-header reveal">
+      <span class="sec-label" id="galleryLabel">ఫోటోలు</span>
+      <h2 id="galleryTitle">దుకాణ ఫోటోలు</h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item">
+        <img src="shop_front_photo.jpg" alt="Shop Front">
+        <div class="gallery-caption">
+          <h3 id="cap1">దుకాణం ముందు భాగం</h3>
+          <p id="cap1sub">Mahesh Kirana &amp; Xerox</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="shop.jpg" alt="Shop Inside">
+        <div class="gallery-caption">
+          <h3 id="cap2">దుకాణం లోపల భాగం</h3>
+          <p id="cap2sub">Fresh groceries &amp; more</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS -->
+<section class="section">
+  <div class="page-wrap">
+    <div class="sec-header reveal">
+      <span class="sec-label" id="hoursLabel">సమయాలు</span>
+      <h2 id="hoursTitle">తెరచి ఉండే సమయాలు</h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="hours-grid reveal" id="hoursGrid"></div>
+  </div>
 </section>
 
 <!-- LOCATION -->
-<section class="map">
-<h2 id="contactTitle"></h2>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.2946667280107!2d83.08162759999999!3d18.011523500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3bd9c9ccec4d1d%3A0x17992d1d0137f734!2sMahesh%20Kirana%20%26%20Xerox!5e0!3m2!1sen!2sin!4v1772531721855!5m2!1sen!2sin"></iframe>
+<section class="section section-alt">
+  <div class="page-wrap">
+    <div class="sec-header reveal">
+      <span class="sec-label" id="locLabel">స్థానం</span>
+      <h2 id="locTitle">మా స్థానం</h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="location-grid reveal">
+      <div class="map-box">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.2946667280107!2d83.08162759999999!3d18.011523500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3bd9c9ccec4d1d%3A0x17992d1d0137f734!2sMahesh%20Kirana%20%26%20Xerox!5e0!3m2!1sen!2sin!4v1772531721855!5m2!1sen!2sin" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="contact-card">
+        <h3 id="contactHead">సంప్రదింపు వివరాలు</h3>
+        <a href="tel:9640695662" class="contact-row">
+          <div class="c-ico phone"><i class="fas fa-phone-alt"></i></div>
+          <div class="c-text">
+            <div class="c-label" id="phoneLabel">ఫోన్</div>
+            <div class="c-val">96406 95662</div>
+          </div>
+          <i class="fas fa-chevron-right" style="margin-left:auto;color:var(--gray-500);font-size:11px"></i>
+        </a>
+        <a href="https://wa.me/919640695662" class="contact-row">
+          <div class="c-ico wa"><i class="fab fa-whatsapp"></i></div>
+          <div class="c-text">
+            <div class="c-label">WhatsApp</div>
+            <div class="c-val" id="waVal">వాట్సాప్ అందుబాటులో ఉంది</div>
+          </div>
+          <i class="fas fa-chevron-right" style="margin-left:auto;color:var(--gray-500);font-size:11px"></i>
+        </a>
+        <div class="contact-row">
+          <div class="c-ico hours"><i class="fas fa-clock"></i></div>
+          <div class="c-text">
+            <div class="c-label" id="hoursLab">సమయం</div>
+            <div class="c-val" id="hoursVal">ఉ. 7:00 – రా. 9:00</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="c-ico address"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="c-text">
+            <div class="c-label" id="addrLabel">చిరునామా</div>
+            <div class="c-val" id="addrVal">విశాఖపట్నం, ఆంధ్రప్రదేశ్</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-<p id="footerText"></p>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="fb-name" id="footerName">మహేష్ కిరాణా &amp; జిరాక్స్</div>
+      <p class="fb-desc" id="footerDesc">2005 నుండి మీ నమ్మకమైన పాత దుకాణం. తాజా కిరాణా, కూరగాయలు, జిరాక్స్ సేవలు అన్నీ ఒకే చోట.</p>
+      <div class="fb-badge"><i class="fas fa-award"></i> <span id="footerBadge">2005 నుండి నమ్మకమైన</span></div>
+    </div>
+    <div class="footer-col">
+      <h4 id="footerQuickH">లింక్లు</h4>
+      <ul id="footerQuickList"></ul>
+    </div>
+    <div class="footer-col">
+      <h4 id="footerContactH">సంప్రదించండి</h4>
+      <ul id="footerContactList"></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p id="footerCopy">© 2005 – 2026 మహేష్ కిరాణా &amp; జిరాక్స్. అన్ని హక్కులు మా వద్దే.</p>
+  </div>
 </footer>
 
+<!-- FLOATING WA -->
+<a href="https://wa.me/919640695662" class="wa-float" title="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
 <script>
+/* ── BILINGUAL DATA ── */
+const data = {
+  te: {
+    offerTag: 'ఆఫర్',
+    offerText: 'తాజా కిరాణా సరుకులు మరియు జిరాక్స్ సేవలు — ఒకే చోట, అత్యంత తక్కువ ధరల్లో!',
+    navTagline: '2005 నుండి · వేలాది నమ్మకాలు',
+    heroBadge: '2005 నుండి నమ్మకమైన దుకాణం',
+    heroTitle: 'మహేష్ <span>కిరాణా</span><br>& జిరాక్స్',
+    heroDesc: 'తాజా కిరాణా సరుకులు, కూరగాయలు, జిరాక్స్ సేవలు — అన్నీ ఒకే చోట. మీ పక్కింటి నమ్మకమైన దుకాణం.',
+    callBtn: '<i class="fas fa-phone-alt"></i> కాల్ చేయండి',
+    waBtn: '<i class="fab fa-whatsapp"></i> వాట్సాప్',
+    trustTitle: 'మా గురించి',
+    stat1Lab: 'సంవత్సరాలు', stat2Lab: 'కస్టమర్లు', stat3Lab: 'విభాగాలు', stat4Lab: 'రోజులు తెరచి',
+    feat1T: 'తాజా సరుకులు', feat1S: 'ప్రతిరోజూ తాజా',
+    feat2T: 'మంచి ధరలు', feat2S: 'సరసమైన ధరలు',
+    feat3T: 'మీ పక్కన', feat3S: 'సులభంగా చేరుకోవచ్చు',
+    feat4T: 'స్నేహపూర్వక సేవ', feat4S: 'వ్యక్తిగత శ్రద్ధ',
+    svcLabel: 'మా సేవలు', svcTitle: 'మేము అందించే సేవలు', svcDesc: 'కిరాణా నుండి ఆఫీస్ సేవల వరకు — అన్నీ ఒకే చోట',
+    grocLabel: 'కిరాణా', grocTitle: 'కిరాణా సరుకులు',
+    vegLabel: 'కూరగాయలు', vegTitle: 'తాజా కూరగాయలు',
+    dryLabel: 'డ్రై ఫ్రూట్స్', dryTitle: 'డ్రై ఫ్రూట్స్ & మసాలాలు',
+    stationLabel: 'స్టేషనరీ', stationTitle: 'స్టేషనరీ వస్తువులు',
+    pujaLabel: 'పూజా సామగ్రి', pujaTitle: 'పూజా సామగ్రి',
+    drinkLabel: 'పానీయాలు', drinkTitle: 'కూల్ డ్రింక్స్',
+    galleryLabel: 'ఫోటోలు', galleryTitle: 'దుకాణ ఫోటోలు',
+    cap1: 'దుకాణం ముందు భాగం', cap1sub: 'Mahesh Kirana & Xerox',
+    cap2: 'దుకాణం లోపల భాగం', cap2sub: 'తాజా సరుకులు & మరిన్నీ',
+    hoursLabel: 'సమయాలు', hoursTitle: 'తెరచి ఉండే సమయాలు',
+    locLabel: 'స్థానం', locTitle: 'మా స్థానం',
+    contactHead: 'సంప్రదింపు వివరాలు',
+    phoneLabel: 'ఫోన్', waVal: 'వాట్సాప్ అందుబాటులో ఉంది',
+    hoursLab: 'సమయం', hoursVal: 'ఉ. 7:00 – రా. 9:00',
+    addrLabel: 'చిరునామా', addrVal: 'విశాఖపట్నం, ఆంధ్రప్రదేశ్',
+    footerName: 'మహేష్ కిరాణా & జిరాక్స్',
+    footerDesc: '2005 నుండి మీ నమ్మకమైన పాత దుకాణం. తాజా కిరాణా, కూరగాయలు, జిరాక్స్ సేవలు అన్నీ ఒకే చోట.',
+    footerBadge: '2005 నుండి నమ్మకమైన',
+    footerQuickH: 'లింక్లు',
+    footerContactH: 'సంప్రదించండి',
+    footerCopy: '© 2005 – 2026 మహేష్ కిరాణా & జిరాక్స్. అన్ని హక్కులు మా వద్దే.',
+    langBtn: 'English',
+    closedLabel: 'మూసి ఉంది',
+    openLabel: 'తెరచి ఉంది',
+    todayLabel: '● నేడు',
+    services: [
+      { emoji:'🖨️', name:'జిరాక్స్',        desc:'రంగు & నలుపు-తెలుపు కాపీలు, అన్ని పరిమాణాలు' },
+      { emoji:'🗂️', name:'లామినేషన్',       desc:'అన్ని పరిమాణాల లామినేషన్ సేవలు' },
+      { emoji:'📱', name:'మొబైల్ రీచార్జ్', desc:'అన్ని నెట్‌వర్క్‌ల రీచార్జ్' },
+      { emoji:'⚡', name:'కరెంట్ బిల్',     desc:'వేగంగా కరెంట్ బిల్ చెల్లింపు' },
+    ],
+    groceries: [
+      { e:'🌾', c:'c-amber',  n:'ధాన్యాలు & పిండి',  d:'బియ్యం, గోధుమ పిండి, శనగ పిండి, అన్ని రకాల పిండి' },
+      { e:'🍬', c:'c-blue',   n:'చక్కెర & తీపి',     d:'చక్కెర, బెల్లం మరియు ఇతర తీపి వస్తువులు' },
+      { e:'🫙', c:'c-orange', n:'నూనెలు',             d:'వంట నూనె, నువ్వుల నూనె మరియు ఇతర నూనెలు' },
+    ],
+    vegetables: [
+      { e:'🧅', c:'c-purple', n:'ఉల్లిపాయ & వెల్లుల్లి', d:'తాజా ఉల్లిపాయలు మరియు వెల్లుల్లి' },
+      { e:'🥔', c:'c-amber',  n:'ఆలుగడ్డ & దుంపలు',    d:'తాజా ఆలుగడ్డలు మరియు ఇతర దుంపలు' },
+      { e:'🍅', c:'c-red',    n:'టమోటా & మిర్చి',       d:'తాజా టమోటాలు, ఆకు మరియు ఎర్ర మిర్చి' },
+    ],
+    dryFruits: [
+      { e:'🥜', c:'c-amber',  n:'వేరుశెనగలు',         d:'తాజా వేరుశెనగలు మరియు వేపుడు వేరుశెనగలు' },
+      { e:'🌰', c:'c-orange', n:'కాజూ & బాదం',         d:'ప్రీమియం కాజూ మరియు బాదం పప్పు' },
+      { e:'🌶️', c:'c-red',   n:'మసాలా దినుసులు',      d:'అన్ని రకాల మసాలాలు మరియు గరం మసాలా' },
+    ],
+    stationery: [
+      { e:'🖊️', c:'c-blue',   n:'పెన్స్ & పెన్సిళ్లు',   d:'అన్ని రకాల రాయడం సామగ్రి' },
+      { e:'📓', c:'c-green',  n:'పుస్తకాలు & నోట్బుక్స్', d:'అన్ని తరగతుల పుస్తకాలు మరియు నోట్బుక్స్' },
+      { e:'📁', c:'c-purple', n:'ఫైళ్లు & ఫోల్డర్లు',    d:'అన్ని రకాల ఫైళ్లు మరియు ఆఫీస్ సామగ్రి' },
+    ],
+    puja: [
+      { e:'🪔', c:'c-amber',  n:'అగర్బత్తి & కర్పూరం', d:'అన్ని రకాల అగర్బత్తి మరియు కర్పూరం' },
+      { e:'🥥', c:'c-teal',   n:'కొబ్బరి',              d:'తాజా కొబ్బరి మరియు కొబ్బరి నూనె' },
+      { e:'🌸', c:'c-red',    n:'పూజా సామగ్రి',         d:'అన్ని రకాల పూజా వస్తువులు' },
+    ],
+    drinks: [
+      { e:'🧃', c:'c-orange', n:'ఫ్రూట్ జ్యూస్',   d:'వివిధ రుచుల పండ్ల జ్యూస్లు' },
+      { e:'🥤', c:'c-blue',   n:'కూల్ డ్రింక్స్',   d:'కోల్డ్ డ్రింక్స్ మరియు సోడా వాటర్' },
+      { e:'💧', c:'c-teal',   n:'మినరల్ వాటర్',    d:'శుద్ధమైన మినరల్ వాటర్ బాటిళ్లు' },
+    ],
+    hours: [
+      { day:'సోమవారం',   time:'ఉ. 7:00 – రా. 9:00', open:true  },
+      { day:'మంగళవారం',  time:'ఉ. 7:00 – రా. 9:00', open:true  },
+      { day:'బుధవారం',   time:'ఉ. 7:00 – రా. 9:00', open:true  },
+      { day:'గురువారం',  time:'ఉ. 7:00 – రా. 9:00', open:true  },
+      { day:'శుక్రవారం', time:'ఉ. 7:00 – రా. 9:00', open:true  },
+      { day:'శనివారం',   time:'ఉ. 7:00 – రా. 9:00', open:true  },
+      { day:'ఆదివారం',   time:'మూసి ఉంటుంది',        open:false },
+    ],
+    footerQuick: ['కిరాణా సరుకులు', 'తాజా కూరగాయలు', 'జిరాక్స్ సేవలు', 'పూజా సామగ్రి'],
+    footerContact: [
+      { i:'fas fa-phone-alt', t:'96406 95662' },
+      { i:'fab fa-whatsapp',  t:'వాట్సాప్ అందుబాటులో' },
+      { i:'fas fa-clock',     t:'ఉ. 7:00 – రా. 9:00' },
+    ],
+  },
+  en: {
+    offerTag: 'OFFER',
+    offerText: 'Fresh groceries & Xerox services — all in one place at unbeatable prices!',
+    navTagline: 'Since 2005 · Trusted by Thousands',
+    heroBadge: 'Trusted Since 2005',
+    heroTitle: 'Mahesh <span>Kirana</span><br>& Xerox',
+    heroDesc: 'Fresh groceries, vegetables and Xerox services — all under one roof. Your trusted neighbourhood store since 2005.',
+    callBtn: '<i class="fas fa-phone-alt"></i> Call Us',
+    waBtn: '<i class="fab fa-whatsapp"></i> WhatsApp',
+    trustTitle: 'About Us',
+    stat1Lab: 'Years Exp.', stat2Lab: 'Customers', stat3Lab: 'Categories', stat4Lab: 'Days Open',
+    feat1T: 'Fresh Products', feat1S: 'Daily fresh stock',
+    feat2T: 'Best Prices', feat2S: 'Affordable rates',
+    feat3T: 'Conveniently Located', feat3S: 'Easy to reach',
+    feat4T: 'Friendly Service', feat4S: 'Personal attention',
+    svcLabel: 'Services', svcTitle: 'What We Offer', svcDesc: 'From groceries to office services — all in one place',
+    grocLabel: 'Groceries', grocTitle: 'Groceries',
+    vegLabel: 'Vegetables', vegTitle: 'Fresh Vegetables',
+    dryLabel: 'Dry Fruits', dryTitle: 'Dry Fruits & Spices',
+    stationLabel: 'Stationery', stationTitle: 'Stationery Items',
+    pujaLabel: 'Puja', pujaTitle: 'Puja Items',
+    drinkLabel: 'Drinks', drinkTitle: 'Cold Drinks',
+    galleryLabel: 'Photos', galleryTitle: 'Shop Photos',
+    cap1: 'Shop Front', cap1sub: 'Mahesh Kirana & Xerox',
+    cap2: 'Shop Interior', cap2sub: 'Fresh groceries & more',
+    hoursLabel: 'Hours', hoursTitle: 'Opening Hours',
+    locLabel: 'Location', locTitle: 'Find Us',
+    contactHead: 'Contact Details',
+    phoneLabel: 'Phone', waVal: 'WhatsApp Available',
+    hoursLab: 'Hours', hoursVal: '7:00 AM – 9:00 PM',
+    addrLabel: 'Address', addrVal: 'Visakhapatnam, Andhra Pradesh',
+    footerName: 'Mahesh Kirana & Xerox',
+    footerDesc: 'Your trusted neighbourhood store since 2005. Fresh groceries, vegetables, Xerox services and more — all under one roof.',
+    footerBadge: 'Trusted Since 2005',
+    footerQuickH: 'Quick Links',
+    footerContactH: 'Get in Touch',
+    footerCopy: '© 2005 – 2026 Mahesh Kirana & Xerox. All rights reserved.',
+    langBtn: 'తెలుగు',
+    closedLabel: 'Closed',
+    openLabel: 'Open',
+    todayLabel: '● Today',
+    services: [
+      { emoji:'🖨️', name:'Xerox',            desc:'Color & B/W copies in all sizes' },
+      { emoji:'🗂️', name:'Lamination',       desc:'Lamination services in all sizes' },
+      { emoji:'📱', name:'Mobile Recharge',  desc:'Recharge for all networks' },
+      { emoji:'⚡', name:'Electricity Bill', desc:'Quick electricity bill payment' },
+    ],
+    groceries: [
+      { e:'🌾', c:'c-amber',  n:'Grains & Flours',  d:'Rice, wheat flour, gram flour and all types of flours' },
+      { e:'🍬', c:'c-blue',   n:'Sugar & Sweets',   d:'Sugar, jaggery and other sweet items' },
+      { e:'🫙', c:'c-orange', n:'Oils',             d:'Cooking oil, sesame oil and other oils' },
+    ],
+    vegetables: [
+      { e:'🧅', c:'c-purple', n:'Onion & Garlic',   d:'Fresh onions and garlic' },
+      { e:'🥔', c:'c-amber',  n:'Potato & Roots',   d:'Fresh potatoes and other root vegetables' },
+      { e:'🍅', c:'c-red',    n:'Tomato & Chilli',  d:'Fresh tomatoes, green and red chillies' },
+    ],
+    dryFruits: [
+      { e:'🥜', c:'c-amber',  n:'Groundnuts',       d:'Fresh and roasted groundnuts' },
+      { e:'🌰', c:'c-orange', n:'Cashew & Badam',   d:'Premium cashews and almonds' },
+      { e:'🌶️', c:'c-red',   n:'Spices',           d:'All types of spices and garam masala' },
+    ],
+    stationery: [
+      { e:'🖊️', c:'c-blue',   n:'Pens & Pencils',    d:'All types of writing instruments' },
+      { e:'📓', c:'c-green',  n:'Books & Notebooks', d:'Notebooks and books for all classes' },
+      { e:'📁', c:'c-purple', n:'Files & Folders',   d:'All types of files and office supplies' },
+    ],
+    puja: [
+      { e:'🪔', c:'c-amber',  n:'Agarbatti & Camphor', d:'All types of incense sticks and camphor' },
+      { e:'🥥', c:'c-teal',   n:'Coconut',             d:'Fresh coconut and coconut oil' },
+      { e:'🌸', c:'c-red',    n:'Pooja Materials',     d:'All types of pooja items' },
+    ],
+    drinks: [
+      { e:'🧃', c:'c-orange', n:'Fruit Juices',  d:'Assorted fruit juices' },
+      { e:'🥤', c:'c-blue',   n:'Cold Drinks',   d:'Cold drinks and soda water' },
+      { e:'💧', c:'c-teal',   n:'Mineral Water', d:'Pure mineral water bottles' },
+    ],
+    hours: [
+      { day:'Monday',    time:'7:00 AM – 9:00 PM', open:true  },
+      { day:'Tuesday',   time:'7:00 AM – 9:00 PM', open:true  },
+      { day:'Wednesday', time:'7:00 AM – 9:00 PM', open:true  },
+      { day:'Thursday',  time:'7:00 AM – 9:00 PM', open:true  },
+      { day:'Friday',    time:'7:00 AM – 9:00 PM', open:true  },
+      { day:'Saturday',  time:'7:00 AM – 9:00 PM', open:true  },
+      { day:'Sunday',    time:'Closed',             open:false },
+    ],
+    footerQuick: ['Groceries', 'Fresh Vegetables', 'Xerox Services', 'Puja Items'],
+    footerContact: [
+      { i:'fas fa-phone-alt', t:'96406 95662' },
+      { i:'fab fa-whatsapp',  t:'WhatsApp Available' },
+      { i:'fas fa-clock',     t:'7:00 AM – 9:00 PM' },
+    ],
+  }
+};
 
-let isTelugu=true;
+/* ── LANGUAGE ENGINE ── */
+let lang = 'te';
 
-function setTelugu(){
-document.getElementById("title").innerText="మహేష్ కిరాణా & జిరాక్స్";
-document.getElementById("subtitle").innerText="2005 నుండి విశ్వసనీయ సేవలు";
-document.getElementById("servicesTitle").innerText="మా సేవలు";
-document.getElementById("groceryTitle").innerText="కిరాణా సరుకులు";
-document.getElementById("vegTitle").innerText="తాజా కూరగాయలు";
-document.getElementById("dryTitle").innerText="డ్రై ఫ్రూట్స్ & మసాలాలు";
-document.getElementById("stationeryTitle").innerText="స్టేషనరీ వస్తువులు";
-document.getElementById("pujaTitle").innerText="పూజా సామగ్రి";
-document.getElementById("drinkTitle").innerText="కూల్ డ్రింక్స్";
-document.getElementById("photoTitle").innerText="దుకాణ ఫోటోలు";
-document.getElementById("contactTitle").innerText="మా స్థానం";
-document.getElementById("callBtn").innerText="📞 కాల్ చేయండి";
-document.getElementById("whatsappBtn").innerText="💬 వాట్సాప్";
-document.getElementById("footerText").innerText="© 2005 - 2026 మహేష్ కిరాణా & జిరాక్స్";
+function $ (id) { return document.getElementById(id); }
+function html(id, val) { $(id).innerHTML = val; }
+function txt(id, val) { $(id).innerText  = val; }
 
-document.getElementById("servicesList").innerText="జిరాక్స్, లామినేషన్, మొబైల్ రీచార్జ్, కరెంట్ బిల్ చెల్లింపు.";
-document.getElementById("groceryList").innerText="బియ్యం, గోధుమ పిండి, శనగ పిండి, అన్ని రకాల పిండి, చక్కెర, నూనె.";
-document.getElementById("vegList").innerText="ఉల్లిపాయ, ఆలుగడ్డ, టమోటా, మిర్చి, వెల్లుల్లి.";
-document.getElementById("dryList").innerText="కాజూ, బాదం, వేరుశెనగలు, మసాలా దినుసులు.";
-document.getElementById("stationeryList").innerText="పెన్స్, పుస్తకాలు, ఫైళ్లు.";
-document.getElementById("pujaList").innerText="అగర్బత్తి, కర్పూరం, కొబ్బరి, పూజా సామగ్రి.";
-document.getElementById("drinkList").innerText="కూల్ డ్రింక్స్ మరియు శీతల పానీయాలు.";
+function setLanguage(l) {
+  lang = l;
+  document.documentElement.lang = l;
+  const d = data[l];
 
-document.getElementById("langBtn").innerText="English";
+  /* top banner */
+  txt('offerTag',  d.offerTag);
+  txt('offerText', d.offerText);
+
+  /* nav */
+  txt('navTagline', d.navTagline);
+  txt('langBtn', d.langBtn);
+
+  /* hero */
+  txt('heroBadge', d.heroBadge);
+  html('heroTitle', d.heroTitle);
+  txt('heroDesc', d.heroDesc);
+  html('callBtn', d.callBtn);
+  html('waBtn', d.waBtn);
+  txt('trustTitle', d.trustTitle);
+  txt('stat1Lab', d.stat1Lab); txt('stat2Lab', d.stat2Lab);
+  txt('stat3Lab', d.stat3Lab); txt('stat4Lab', d.stat4Lab);
+
+  /* features strip */
+  txt('feat1T', d.feat1T); txt('feat1S', d.feat1S);
+  txt('feat2T', d.feat2T); txt('feat2S', d.feat2S);
+  txt('feat3T', d.feat3T); txt('feat3S', d.feat3S);
+  txt('feat4T', d.feat4T); txt('feat4S', d.feat4S);
+
+  /* section labels */
+  txt('svcLabel', d.svcLabel);   txt('svcTitle', d.svcTitle);   txt('svcDesc', d.svcDesc);
+  txt('grocLabel', d.grocLabel); txt('grocTitle', d.grocTitle);
+  txt('vegLabel', d.vegLabel);   txt('vegTitle', d.vegTitle);
+  txt('dryLabel', d.dryLabel);   txt('dryTitle', d.dryTitle);
+  txt('stationLabel', d.stationLabel); txt('stationTitle', d.stationTitle);
+  txt('pujaLabel', d.pujaLabel); txt('pujaTitle', d.pujaTitle);
+  txt('drinkLabel', d.drinkLabel); txt('drinkTitle', d.drinkTitle);
+  txt('galleryLabel', d.galleryLabel); txt('galleryTitle', d.galleryTitle);
+  txt('hoursLabel', d.hoursLabel); txt('hoursTitle', d.hoursTitle);
+  txt('locLabel', d.locLabel);   txt('locTitle', d.locTitle);
+
+  /* gallery captions */
+  txt('cap1', d.cap1); txt('cap1sub', d.cap1sub);
+  txt('cap2', d.cap2); txt('cap2sub', d.cap2sub);
+
+  /* contact card */
+  txt('contactHead', d.contactHead);
+  txt('phoneLabel', d.phoneLabel); txt('waVal', d.waVal);
+  txt('hoursLab', d.hoursLab); txt('hoursVal', d.hoursVal);
+  txt('addrLabel', d.addrLabel); txt('addrVal', d.addrVal);
+
+  /* footer */
+  txt('footerName', d.footerName);
+  txt('footerDesc', d.footerDesc);
+  txt('footerBadge', d.footerBadge);
+  txt('footerQuickH', d.footerQuickH);
+  txt('footerContactH', d.footerContactH);
+  txt('footerCopy', d.footerCopy);
+
+  /* services */
+  $('servicesList').innerHTML = d.services.map(s => `
+    <div class="svc-card reveal">
+      <span class="svc-emoji">${s.emoji}</span>
+      <h3>${s.name}</h3>
+      <p>${s.desc}</p>
+    </div>`).join('');
+
+  /* product grids */
+  const prodHTML = arr => arr.map(i => `
+    <div class="prod-card reveal">
+      <div class="prod-icon ${i.c}">${i.e}</div>
+      <div class="prod-body"><h3>${i.n}</h3><p>${i.d}</p></div>
+    </div>`).join('');
+
+  $('groceryList').innerHTML  = prodHTML(d.groceries);
+  $('vegList').innerHTML      = prodHTML(d.vegetables);
+  $('dryList').innerHTML      = prodHTML(d.dryFruits);
+  $('stationList').innerHTML  = prodHTML(d.stationery);
+  $('pujaList').innerHTML     = prodHTML(d.puja);
+  $('drinkList').innerHTML    = prodHTML(d.drinks);
+
+  /* hours */
+  const today = new Date().getDay(); /* 0=Sun,1=Mon… */
+  const dayMap = { te:[1,2,3,4,5,6,0], en:[1,2,3,4,5,6,0] };
+  $('hoursGrid').innerHTML = d.hours.map((h, i) => {
+    const isToday = (i === (today === 0 ? 6 : today - 1));
+    return `
+    <div class="hour-row${isToday ? ' today' : ''}">
+      <div class="hour-day">
+        <i class="fas fa-${isToday ? 'sun' : 'circle'}"></i>
+        ${h.day}${isToday ? ` <small style="font-size:10px;color:var(--green-800);font-weight:700">${d.todayLabel}</small>` : ''}
+      </div>
+      ${h.open
+        ? `<span class="hour-time">${h.time}</span>`
+        : `<span class="closed-tag">${d.closedLabel}</span>`}
+    </div>`;
+  }).join('');
+
+  /* footer quick links */
+  $('footerQuickList').innerHTML = d.footerQuick.map(q =>
+    `<li><i class="fas fa-arrow-right"></i>${q}</li>`).join('');
+
+  $('footerContactList').innerHTML = d.footerContact.map(c =>
+    `<li><i class="${c.i}"></i>${c.t}</li>`).join('');
+
+  /* re-observe newly injected .reveal elements */
+  observeReveal();
 }
 
-function setEnglish(){
-document.getElementById("title").innerText="Mahesh Kirana & Xerox";
-document.getElementById("subtitle").innerText="Trusted Services Since 2005";
-document.getElementById("servicesTitle").innerText="Our Services";
-document.getElementById("groceryTitle").innerText="Groceries";
-document.getElementById("vegTitle").innerText="Fresh Vegetables";
-document.getElementById("dryTitle").innerText="Dry Fruits & Spices";
-document.getElementById("stationeryTitle").innerText="Stationery Items";
-document.getElementById("pujaTitle").innerText="Puja Items";
-document.getElementById("drinkTitle").innerText="Cold Drinks";
-document.getElementById("photoTitle").innerText="Shop Photos";
-document.getElementById("contactTitle").innerText="Our Location";
-document.getElementById("callBtn").innerText="📞 Call";
-document.getElementById("whatsappBtn").innerText="💬 WhatsApp";
-document.getElementById("footerText").innerText="© 2005 - 2026 Mahesh Kirana & Xerox";
-
-document.getElementById("servicesList").innerText="Xerox, Lamination, Mobile Recharge, Electricity Bill Payment.";
-document.getElementById("groceryList").innerText="Rice, wheat flour, gram flour, all flours, sugar, oil.";
-document.getElementById("vegList").innerText="Onion, potato, tomato, mirchi, garlic.";
-document.getElementById("dryList").innerText="Cashew, badam, groundnuts, spices.";
-document.getElementById("stationeryList").innerText="Pens, notebooks, files.";
-document.getElementById("pujaList").innerText="Agarbatti, camphor, coconut and pooja materials.";
-document.getElementById("drinkList").innerText="Cold drinks and beverages.";
-
-document.getElementById("langBtn").innerText="తెలుగు";
+function toggleLanguage() {
+  setLanguage(lang === 'te' ? 'en' : 'te');
 }
 
-function toggleLanguage(){
-if(isTelugu){setEnglish();isTelugu=false;}
-else{setTelugu();isTelugu=true;}
+/* ── SCROLL-REVEAL (IntersectionObserver) ── */
+function observeReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => {
+    if (!el.classList.contains('visible')) observer.observe(el);
+  });
 }
 
-window.onload=setTelugu;
-
+window.addEventListener('DOMContentLoaded', () => {
+  setLanguage('te');
+  observeReveal();
+});
 </script>
-
 </body>
 </html>
