@@ -838,6 +838,7 @@ const data = {
 };
 
 function setLanguage(lang) {
+  document.documentElement.lang = lang;
   const d = data[lang];
   const $ = id => document.getElementById(id);
 
